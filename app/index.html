@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Footy_Teams</title>
+    <title>Footy_Favorites</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -24,12 +24,35 @@
   <body>
 
     <div class="hero-unit">
-      <h1>Footy Teams</h1>
-      <p>What footy teams do you like?</p>
-      <form id="footy_teams" action="" method="post">
-        <input type="text" name="fav_team" id="team_name" placeholder="What Is Your Favorite Team?">
-        <button name="add_team">Add</button>
+
+      <h1>Footy Favorites</h1>
+
+      <form id="user_favs">
+
+        <p>What is your name?</p>
+          <input type="text" name="user" id="user_name" placeholder="please enter your full name">
+
+        <p>What footy team do you support?</p>
+          <input type="text" name="fav_team" id="team_name" placeholder="what is your favorite team?">
+
+        <p>Who is your favorite player?</p>
+          <input type="text" name="fav_player" id="player_name" placeholder="who is your favorite player?">
+
+        <p>What is your favorite stadium?</p>
+          <input type="text" name="fav_stadium" id="stadium_name" placeholder="what is your favorite stadium?">
+
+        <p>What is your favorite league?</p>
+          <input type="text" name="fav_league" id="league_name" placeholder="what is your favorite league?">
+
+        <div>
+          <button id="add_selections">Add Selections</button>
+          <button id="update_selections">Update Selections</button>
+        </div>
+
       </form>
+
+
+
     </div>
 
     <!-- build:js scripts/vendor.js -->
