@@ -27,33 +27,51 @@
 
       <h1>Footy Favorites</h1>
 
+      <div class="results">
+
+        <h2>What People Are Saying...</h2>
+          <ul>
+            <li>Top Teams</li>
+            <li>Top Players</li>
+            <li>Top Stadiums</li>
+            <li>Top Leagues</li>
+          </ul>
+      </div>
+
+      <h2>Make Your Selections...</h2>
+
       <form id="user_favs">
 
-        <p>What is your name?</p>
-          <input type="text" name="user" id="user_name" placeholder="please enter your full name">
-
-        <p>What footy team do you support?</p>
-          <input type="text" name="fav_team" id="team_name" placeholder="what is your favorite team?">
-
-        <p>Who is your favorite player?</p>
-          <input type="text" name="fav_player" id="player_name" placeholder="who is your favorite player?">
-
-        <p>What is your favorite stadium?</p>
-          <input type="text" name="fav_stadium" id="stadium_name" placeholder="what is your favorite stadium?">
-
-        <p>What is your favorite league?</p>
-          <input type="text" name="fav_league" id="league_name" placeholder="what is your favorite league?">
-
-        <div>
-          <button id="add_selections">Add Selections</button>
-          <button id="update_selections">Update Selections</button>
+        <div class="col">
+          <p>What is your name?</p>
+          <input type="text" name="user" id="user_name" placeholder="full name...">
+        </div>
+        <div class="col">
+          <p>What footy team do you like?</p>
+          <input type="text" name="fav_team" id="team_name" placeholder="favorite team...">
+        </div>
+        <div class="col">
+          <p>Who is your favorite player?</p>
+          <input type="text" name="fav_player" id="player_name" placeholder="favorite player...">
+        </div>
+        <div class="col">
+          <p>What is your favorite stadium?</p>
+          <input type="text" name="fav_stadium" id="stadium_name" placeholder="favorite stadium...">
+        </div>
+        <div class="col">
+          <p>What is your favorite league?</p>
+          <input type="text" name="fav_league" id="league_name" placeholder="favorite league...">
         </div>
 
       </form>
 
-
+      <div class="btns">
+        <button id="add_selections">Add Selections</button>
+        <button id="update_selections">Update Selections</button>
+      </div>
 
     </div>
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

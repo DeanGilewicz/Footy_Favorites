@@ -7,20 +7,98 @@ body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  font-size: 62.5%;
 }
 
 .hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
+  margin: 50px auto 50px auto;
+  width: 100%;
+  font-size: 1.5em;
   font-weight: 200;
   line-height: 30px;
   background-color: #eee;
   border-radius: 6px;
   padding: 60px;
   h1 {
-    font-size: 60px;
+    text-align: center;
+    color: HSLA(224, 72%, 15%, 1);
+    font-size: 4em;
     line-height: 1;
     letter-spacing: -1px;
+  }
+  .results {
+    overflow: auto;
+    margin: 60px auto 0px auto;
+
+    ul {
+      overflow: auto;
+
+      li {
+        border: 1px solid blue;
+        border-radius: 15px;
+        width: 20%;
+        height: 200px;
+        float: left;
+        list-style-type: none;
+        margin: 30px 6% 50px 0px;
+
+        &:last-child {
+          margin-right: 0%;
+        }
+      }
+    }
+  }
+  #user_favs {
+    overflow: auto;
+    margin: 60px auto 50px auto;
+
+    p {
+      padding: 0% 2%;
+    }
+  }
+  .col {
+    float: left;
+    margin-right: 3%;
+    width: 17%;
+    height: 170px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: HSLA(224, 72%, 15%, 1);
+    color: HSLA(0, 0%, 100%, 1);
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  input {
+    width: 90%;
+    margin-top: 30px;
+    padding-left: 5%;
+    border-radius: 15px;
+    font-size: 0.8em;
+  }
+  .btns {
+    clear: both;
+    text-align: center;
+  }
+
+  button {
+    width: 200px;
+    border: 1px solid HSLA(224, 72%, 15%, 1);
+    border-radius: 15px;
+    transition: background-color 1s ease;
+    background-color: HSLA(198, 75%, 65%, 1);
+    transition: color 1s smooth;
+    color: HSLA(0, 0%, 0%, 1);
+
+    &:first-child {
+    margin-right: 40px;
+    }
+
+    &:hover {
+      background-color: HSLA(198, 75%, 25%, 1);
+      color: HSLA(0, 0%, 100%, 1);
+    }
   }
 }
