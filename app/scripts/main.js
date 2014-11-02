@@ -3,10 +3,10 @@ var Favorite = Backbone.Model.extend ({
 
   defaults: {
     name: '',
-    team: 'no team',
-    player: 'only on weekends',
+    team: '',
+    player: '',
     stadium: '',
-    league: 'top class'
+    league: ''
   },
 
   initialize: function() {
@@ -63,5 +63,6 @@ $('#add_selections').on('click', function(e){
   // Clear my form
   $('#user_favs')[0].reset();
 
-
 });
+
+// Display data in the browser

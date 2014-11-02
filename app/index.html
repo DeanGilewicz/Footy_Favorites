@@ -60,14 +60,20 @@
         </div>
         <div class="col">
           <p>What is your favorite league?</p>
-          <input type="text" name="fav_league" id="league_name" placeholder="favorite league...">
+          <select name="fav_league" id="league_name">
+            <option value="no league chosen" selected>choose a league</option>
+            <option value="EPL">EPL</option>
+            <option value="La Liga">La Liga</option>
+            <option value="Serie A">Serie A</option>
+            <option value="Ligue 1">Ligue 1</option>
+            <option value="MLS">MLS</option>
+          </select>
         </div>
 
       </form>
 
-      <div class="btns">
+      <div class="btn">
         <button id="add_selections">Add Selections</button>
-        <button id="update_selections">Update Selections</button>
       </div>
 
     </div>
