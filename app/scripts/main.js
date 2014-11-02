@@ -3,7 +3,7 @@ var Favorite = Backbone.Model.extend ({
 
   defaults: {
     name: '',
-    team: '',
+    team: 'test',
     player: '',
     stadium: '',
     league: ''
