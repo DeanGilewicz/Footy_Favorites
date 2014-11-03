@@ -34,36 +34,36 @@ body {
     color: HSLA(224, 72%, 15%, 1);
   }
 
-  .results {
-    overflow: auto;
-    margin: 40px auto 0px auto;
-
-    ul {
-      overflow: auto;
-      text-align: center;
-
-      p {
-        font-size: 1.5em;
-        margin: 0px auto;
-        padding: 2%;
-      }
-
-      li {
-        float: left;
-        width: 20%;
-        height: 200px;
-        margin: 30px 6% 50px 0px;
-        list-style-type: none;
-        border-radius: 15px;
-        background-color: HSLA(198, 75%, 65%, 1);
-        color: HSLA(224, 72%, 15%, 1);
-
-        &:last-child {
-          margin-right: 0%;
-        }
-      }
-    }
-  }
+  // .results {
+  //   overflow: auto;
+  //   margin: 40px auto 0px auto;
+  //
+  //   ul {
+  //     overflow: auto;
+  //     text-align: center;
+  //
+  //     p {
+  //       font-size: 1.5em;
+  //       margin: 0px auto;
+  //       padding: 2%;
+  //     }
+  //
+  //     li {
+  //       float: left;
+  //       width: 20%;
+  //       height: 200px;
+  //       margin: 30px 6% 50px 0px;
+  //       list-style-type: none;
+  //       border-radius: 15px;
+  //       background-color: HSLA(198, 75%, 65%, 1);
+  //       color: HSLA(224, 72%, 15%, 1);
+  //
+  //       &:last-child {
+  //         margin-right: 0%;
+  //       }
+  //     }
+  //   }
+  // }
 
   #user_favs {
     overflow: auto;

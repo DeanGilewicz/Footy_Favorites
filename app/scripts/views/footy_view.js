@@ -14,7 +14,7 @@ var FavoritesView = Backbone.View.extend({
     console.log(self);
 
     // Underscore Template
-    var template = $('#team_template').html();
+    var template = $('#list_template').html();
     var rendered = _.template(template);
 
     console.log(this.el);
@@ -30,7 +30,7 @@ var FavoritesView = Backbone.View.extend({
     // console.log(this.el);
 
     // take the data and append it into a specific element on my page
-    $('#result_list').html(this.el);
+    $('#list').append(this.el);
 
     return this;
   }

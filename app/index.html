@@ -31,7 +31,21 @@
 
         <h2>What People Are Saying...</h2>
 
-        <div id="result_list"></div>
+        <div id="list">
+          <ul>
+            <p>Top Teams</p>
+          </ul>
+          <ul>
+            <p>Top Players</p>
+          </ul>
+          <ul>
+            <p>Top Stadiums</p>
+          </ul>
+          <ul>
+            <p>Top League</p>
+          </ul>
+
+        </div>
 
       </div>
 
@@ -75,32 +89,12 @@
 
     </div>
 
-    <script type="text/template" id="team_template">
-      <ul>
-        <li>Top Teams: <%= team %></li>
-      </ul>
+    <script type="text/template" id="list_template">
+        <li><%= team %></li>
+        <li><%= player %></li>
+        <li><%= stadium %></li>
+        <li><%= league %></li>
     </script>
-
-    <!-- /*<script type="text/template" id="resTemplate">
-      <ul>
-        <li>Top Players: <%= player %></li>
-      </ul>
-    </script>
-
-    <script type="text/template" id="resTemplate">
-      <ul>
-        <li>Top Stadiums: <%= stadium %></li>
-      </ul>
-    </script>
-
-    <script type="text/template" id="resTemplate">
-      <ul>
-        <li>Top Leagues: <%= league %></li>
-      </ul>
-    </script>*/ -->
-
-
-
 
 
     <!-- build:js scripts/vendor.js -->
