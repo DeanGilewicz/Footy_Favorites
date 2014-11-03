@@ -30,12 +30,8 @@
       <div class="results">
 
         <h2>What People Are Saying...</h2>
-          <ul>
-            <li><p>Top Teams</p>Top Teams</li>
-            <li><p>Top Players</p>Top Players</li>
-            <li><p>Top Stadiums</p>Top Stadiums</li>
-            <li class="show_leagues"><p>Top Leagues</p>Top Leagues</li>
-          </ul>
+        <ul id="result_list"></ul>
+
       </div>
 
       <h2>Make Your Selections...</h2>
@@ -78,6 +74,14 @@
 
     </div>
 
+    <script type="text/template" id="resTemplate">
+      <ul>
+        <li>Top Teams: <%= team %></li>
+        <li>Top Players: <%= player %></li>
+        <li>Top Stadiums: <%= stadium %></li>
+        <li>Top Leagues: <%= league %></li>
+      </ul>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
