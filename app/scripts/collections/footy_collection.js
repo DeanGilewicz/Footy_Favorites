@@ -1,4 +1,4 @@
-var myServer = 'http://tiy-atl-fe-server.herokuapp.com/collections/testft';
+var myServer = 'http://tiy-atl-fe-server.herokuapp.com/collections/testft1';
 
 // Collection
 var Favorites = Backbone.Collection.extend ({

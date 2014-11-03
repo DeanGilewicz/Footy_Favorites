@@ -1,7 +1,7 @@
 var FavoritesView = Backbone.View.extend({
 
   tagName: 'ul',
-  className: 'feels',
+  className: 'favList',
 
   initialize: function (attrs) {
     this.render(attrs.collection);
@@ -11,17 +11,16 @@ var FavoritesView = Backbone.View.extend({
 
     // binding 'this' to 'self' for use in nested functions/callbacks
     var self = this;
+    console.log(self);
 
     // Underscore Template
-    var template = $('#resTemplate').html();
+    var template = $('#team_template').html();
     var rendered = _.template(template);
 
     console.log(this.el);
 
     // Iterating over our models
     _.each(coll.models, function (c) {
-
-      // console.log(c.get('name'));
 
       // each iteration... appending the data to our element that Backbone created
       self.$el.append(rendered(c.attributes));
