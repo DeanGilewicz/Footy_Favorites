@@ -1,10 +1,10 @@
 var FavoritesView = Backbone.View.extend({
 
-  tagName 'ul',
+  tagName: 'ul',
   className: 'feels',
 
   initialize: function (attrs) {
-
+    this.render(attrs.collection);
   },
 
   render: function (coll) {
@@ -13,8 +13,8 @@ var FavoritesView = Backbone.View.extend({
     var self = this;
 
     // Underscore Template
-    var favTemplate = $('#resTemplate').html();
-    var favRenderer = _.template(favTemplate);
+    var template = $('#resTemplate').html();
+    var rendered = _.template(template);
 
     console.log(this.el);
 
