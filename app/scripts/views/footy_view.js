@@ -5,8 +5,15 @@
     tagName: 'ol',
     className: 'team_area',
 
+    events: {
+      'click li' : 'deleteMyFav'
+    },
+
     initialize: function () {
       this.render();
+
+      App.all_favorites.on('sync', this.render, this);
+      App.all_favorites.on('destroy', this.render, this);
 
     },
 
@@ -14,14 +21,13 @@
 
       // binding 'this' to 'self' for use in nested functions/callbacks
       var self = this;
-      // console.log(self);
 
       // Underscore Template
       var t_template = $('#team_template').html();
       var t_rendered = _.template(t_template);
 
-      // console.log(this.el);
-
+      // Clear our El
+      this.$el.empty();
 
       // Iterating over our models
       _.each(App.all_favorites.models, function (m) {
@@ -43,6 +49,25 @@
       $('#team_list').append(this.el);
 
       return this;
+
+    },
+
+    deleteMyFav: function (e) {
+
+      e.preventDefault();
+
+      // in backbone target element
+      $(e.target);
+
+      // Check which fav it is
+      var id = $(e.target).attr('id');
+
+      // find that fav in our collection
+      var goodbye = App.all_favorites.get(id);
+
+      // Delete that favorite and remove it from our collection
+      goodbye.destroy();
+
     }
 
   });
