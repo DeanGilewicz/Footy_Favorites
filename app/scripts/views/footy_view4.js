@@ -1,51 +1,72 @@
-var FavoritesView4 = Backbone.View.extend({
+(function () {
 
-  tagName: 'ol',
-  className: 'league_area',
+  App.Views.FavoritesView4 = Backbone.View.extend({
 
-  initialize: function (attrs) {
-    this.render(attrs.collection);
-  },
+    tagName: 'ol',
+    className: 'league_area',
 
-  render: function (coll) {
+    events: {
+      'click li' : 'deleteMyFav'
+    },
 
-    // binding 'this' to 'self' for use in nested functions/callbacks
-    var self = this;
-    console.log(self);
+    initialize: function () {
+      this.render();
 
-    // Underscore Template
-    var l_template = $('#league_template').html();
-    var l_rendered = _.template(l_template);
+      App.all_favorites.on('sync', this.render, this);
+      App.all_favorites.on('destroy', this.render, this);
 
-    console.log(this.el);
+    },
 
+    render: function () {
 
-    // Iterating over our models
-    _.each(coll.models, function (m) {
+      // binding 'this' to 'self' for use in nested functions/callbacks
+      var self = this;
 
-      // each iteration... appending the data to our element that Backbone created
-      self.$el.append(l_rendered(m.attributes));
+      // Underscore Template
+      var l_template = $('#league_template').html();
+      var l_rendered = _.template(l_template);
+
+      // Clear our El
+      this.$el.empty();
+
+      // Iterating over our models
+      _.each(App.all_favorites.models, function (m) {
+
+        // each iteration... appending the data to our element that Backbone created
+        self.$el.append(l_rendered(m.attributes));
+
+      });
 
       // sort collection
-        // var sortedByTeam = all_favorites.sortBy(function (sort) {
-        //     return sort.get("team").toLowerCase();
+        // var sortedByCount = all_favorites.countBy(function (sort) {
+        //     return sort.get("team");
         // });
         //
-        // console.log("- Now sorted: ");
-        //
-        // sortedByTeam.forEach(function(model){
-        //   console.log(model.get('team'));
-        // });
+        // console.log(sortedByCount);
+        // console.log(" Now sorted ");
 
+      // take the data and append it into a specific element on my page
+      $('#league_list').append(this.el);
 
-    });
+      return this;
 
-    // console.log(this.el);
+    },
 
-    // take the data and append it into a specific element on my page
-    $('#stadium_list').append(this.el);
+    deleteMyFav: function (e) {
 
-    return this;
-  }
+      e.preventDefault();
 
-});
+      // Check which fav it is
+      var id = $(e.target).attr('id');
+
+      // find that fav in our collection
+      var goodbye = App.all_favorites.get(id);
+
+      // Delete that favorite and remove it from our collection
+      goodbye.destroy();
+
+    }
+
+  });
+
+}());

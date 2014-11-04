@@ -24,77 +24,69 @@
   <body>
 
     <div class="hero-unit">
-
       <h1>Footy Favorites</h1>
-
       <div class="results">
-
         <h2>What People Are Saying...</h2>
-
-        <div id="team_list"><span class="team_score"></span></div>
+        <div id="team_list"></div>
         <div id="player_list"></div>
         <div id="stadium_list"></div>
         <div id="league_list"></div>
-
       </div>
-
       <h2>Make Your Selections...</h2>
+      <div id="add_favs"></div>
 
-      <form id="user_favs">
-
-        <div class="col">
-          <p>What is your name?</p>
-          <input type="text" name="user" id="user_name" placeholder="full name...">
-        </div>
-        <div class="col">
-          <p>What footy team do you like?</p>
-          <input type="text" name="fav_team" id="team_name" placeholder="favorite team...">
-        </div>
-        <div class="col">
-          <p>Who is your favorite player?</p>
-          <input type="text" name="fav_player" id="player_name" placeholder="favorite player...">
-        </div>
-        <div class="col">
-          <p>What is your favorite stadium?</p>
-          <input type="text" name="fav_stadium" id="stadium_name" placeholder="favorite stadium...">
-        </div>
-        <div class="col">
-          <p>What is your favorite league?</p>
-          <select name="fav_league" id="league_name">
-            <option value="no league chosen" selected>choose a league</option>
-            <option value="EPL">EPL</option>
-            <option value="La Liga">La Liga</option>
-            <option value="Serie A">Serie A</option>
-            <option value="Ligue 1">Ligue 1</option>
-            <option value="MLS">MLS</option>
-          </select>
-        </div>
-
-      </form>
-
-      <div class="btn">
-        <button id="add_selections">Add Selections</button>
-      </div>
-
-    </div>
 
     <script type="text/template" id="team_template">
-        <li><%= team %></li>
+        <li id="<%= _id %>"><%= team %></li>
     </script>
 
     <script type="text/template" id="player_template">
-        <li><%= player %></li>
+        <li id="<%= _id %>"><%= player %></li>
     </script>
 
     <script type="text/template" id="stadium_template">
-        <li><%= stadium %></li>
+        <li id="<%= _id %>"><%= stadium %></li>
     </script>
 
     <script type="text/template" id="league_template">
-        <li><%= league %></li>
+        <li id="<%= _id %>"><%= league %></li>
     </script>
 
 
+    <script type="text/template" id="user_favs">
+        <form id="favsAdd">
+          <div class="col">
+            <p>What is your name?</p>
+            <input type="text" id="user_name" placeholder="full name...">
+          </div>
+          <div class="col">
+            <p>What footy team do you like?</p>
+            <input type="text" id="team_name" placeholder="favorite team...">
+          </div>
+          <div class="col">
+            <p>Who is your favorite player?</p>
+            <input type="text" id="player_name" placeholder="favorite player...">
+          </div>
+          <div class="col">
+            <p>What is your favorite stadium?</p>
+            <input type="text" id="stadium_name" placeholder="favorite stadium...">
+          </div>
+          <div class="col">
+            <p>What is your favorite league?</p>
+            <select name="fav_league" id="league_name">
+              <option value="no league chosen" selected>choose a league</option>
+              <option value="EPL">EPL</option>
+              <option value="La Liga">La Liga</option>
+              <option value="Serie A">Serie A</option>
+              <option value="Ligue 1">Ligue 1</option>
+              <option value="MLS">MLS</option>
+            </select>
+          </div>
+          <div class="btn">
+            <button>Add Selections</button>
+          </div>
+        </form>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -104,6 +96,13 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+      <script type="text/javascript">
+        window.App = {};
+        App.Models = {};
+        App.Collections = {};
+        App.Views = {};
+      </script>
+
         <!-- build:js scripts/main.js -->
         <script src="scripts/models/footy_model.js"></script>
         <script src="scripts/collections/footy_collection.js"></script>
@@ -111,6 +110,7 @@
         <script src="scripts/views/footy_view2.js"></script>
         <script src="scripts/views/footy_view3.js"></script>
         <script src="scripts/views/footy_view4.js"></script>
+        <script src="scripts/views/footy_viewForm.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

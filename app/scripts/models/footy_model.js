@@ -1,23 +1,27 @@
-// Model
-var Favorite = Backbone.Model.extend ({
+(function () {
 
-  defaults: {
-    name: '',
-    team: '',
-    player: '',
-    stadium: '',
-    league: ''
-  },
+  // Model
+  App.Models.Favorite = Backbone.Model.extend ({
 
-  idAttribute: '_id',
+    defaults: {
+      name: '',
+      team: '',
+      player: '',
+      stadium: '',
+      league: ''
+    },
 
-  initialize: function() {
-    var n = this.get('name');
-    var t = this.get('team');
-    var p = this.get('player');
-    var s = this.get('stadium');
-    var l = this.get('league');
-    console.log(n + ' likes ' + t + ', thinks ' + p + ' is really good, ' + s + ' is the best stadium, and ' + l + ' is the best league' );
-  }
+    idAttribute: '_id',
 
-});
+    initialize: function() {
+      // var n = this.get('name');
+      // var t = this.get('team');
+      // var p = this.get('player');
+      // var s = this.get('stadium');
+      // var l = this.get('league');
+      // console.log(n + ' likes ' + t + ', thinks ' + p + ' is really good, ' + s + ' is the best stadium, and ' + l + ' is the best league' );
+    }
+
+  });
+
+}());
