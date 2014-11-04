@@ -26,21 +26,16 @@ var FavoritesView = Backbone.View.extend({
       // each iteration... appending the data to our element that Backbone created
       self.$el.append(t_rendered(m.attributes));
 
-      // sort collection
-        // var sortedByTeam = all_favorites.sortBy(function (sort) {
-        //     return sort.get("team").toLowerCase();
-        // });
-        //
-        // console.log("- Now sorted: ");
-        //
-        // sortedByTeam.forEach(function(model){
-        //   console.log(model.get('team'));
-        // });
-
-
     });
 
-    // console.log(this.el);
+    // sort collection
+      var sortedByCount = all_favorites.countBy(function (sort) {
+          return sort.get("team");
+      });
+
+      $('team_score').append(sortedByCount);
+      console.log(sortedByCount);
+      console.log(" Now sorted ");
 
     // take the data and append it into a specific element on my page
     $('#team_list').append(this.el);
