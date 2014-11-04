@@ -5,7 +5,19 @@ var all_favorites = new Favorites();
 // pull all of the favorites entries from our server
 all_favorites.fetch().done(function(){
 
-  var favsView = new FavoritesView({
+  var favsView1 = new FavoritesView({
+    collection: all_favorites
+  });
+
+  var favsView2 = new FavoritesView2({
+    collection: all_favorites
+  });
+
+  var favsView3 = new FavoritesView3({
+    collection: all_favorites
+  });
+
+  var favsView4 = new FavoritesView4({
     collection: all_favorites
   });
 

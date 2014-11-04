@@ -1,7 +1,7 @@
-var FavoritesView = Backbone.View.extend({
+var FavoritesView3 = Backbone.View.extend({
 
   tagName: 'ul',
-  className: 'team_area',
+  className: 'stadium_area',
 
   initialize: function (attrs) {
     this.render(attrs.collection);
@@ -14,8 +14,8 @@ var FavoritesView = Backbone.View.extend({
     console.log(self);
 
     // Underscore Template
-    var t_template = $('#team_template').html();
-    var t_rendered = _.template(t_template);
+    var s_template = $('#stadium_template').html();
+    var s_rendered = _.template(s_template);
 
     console.log(this.el);
 
@@ -24,7 +24,7 @@ var FavoritesView = Backbone.View.extend({
     _.each(coll.models, function (m) {
 
       // each iteration... appending the data to our element that Backbone created
-      self.$el.append(t_rendered(m.attributes));
+      self.$el.append(s_rendered(m.attributes));
 
       // sort collection
         // var sortedByTeam = all_favorites.sortBy(function (sort) {
@@ -43,7 +43,7 @@ var FavoritesView = Backbone.View.extend({
     // console.log(this.el);
 
     // take the data and append it into a specific element on my page
-    $('#team_list').append(this.el);
+    $('#stadium_list').append(this.el);
 
     return this;
   }

@@ -31,21 +31,10 @@
 
         <h2>What People Are Saying...</h2>
 
-        <div id="list">
-          <ul>
-            <p>Top Teams</p>
-          </ul>
-          <ul>
-            <p>Top Players</p>
-          </ul>
-          <ul>
-            <p>Top Stadiums</p>
-          </ul>
-          <ul>
-            <p>Top League</p>
-          </ul>
-
-        </div>
+        <div id="team_list"></div>
+        <div id="player_list"></div>
+        <div id="stadium_list"></div>
+        <div id="league_list"></div>
 
       </div>
 
@@ -89,12 +78,22 @@
 
     </div>
 
-    <script type="text/template" id="list_template">
+    <script type="text/template" id="team_template">
         <li><%= team %></li>
+    </script>
+
+    <script type="text/template" id="player_template">
         <li><%= player %></li>
+    </script>
+
+    <script type="text/template" id="stadium_template">
         <li><%= stadium %></li>
+    </script>
+
+    <script type="text/template" id="league_template">
         <li><%= league %></li>
     </script>
+
 
 
     <!-- build:js scripts/vendor.js -->
@@ -109,6 +108,9 @@
         <script src="scripts/models/footy_model.js"></script>
         <script src="scripts/collections/footy_collection.js"></script>
         <script src="scripts/views/footy_view.js"></script>
+        <script src="scripts/views/footy_view2.js"></script>
+        <script src="scripts/views/footy_view3.js"></script>
+        <script src="scripts/views/footy_view4.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
