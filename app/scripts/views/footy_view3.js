@@ -1,51 +1,55 @@
-var FavoritesView3 = Backbone.View.extend({
+(function () {
 
-  tagName: 'ol',
-  className: 'stadium_area',
+  App.Views.FavoritesView3 = Backbone.View.extend({
 
-  initialize: function (attrs) {
-    this.render(attrs.collection);
-  },
+    tagName: 'ol',
+    className: 'stadium_area',
 
-  render: function (coll) {
+    initialize: function () {
+      this.render();
+    },
 
-    // binding 'this' to 'self' for use in nested functions/callbacks
-    var self = this;
-    console.log(self);
+    render: function () {
 
-    // Underscore Template
-    var s_template = $('#stadium_template').html();
-    var s_rendered = _.template(s_template);
+      // binding 'this' to 'self' for use in nested functions/callbacks
+      var self = this;
+      // console.log(self);
 
-    console.log(this.el);
+      // Underscore Template
+      var s_template = $('#stadium_template').html();
+      var s_rendered = _.template(s_template);
 
-
-    // Iterating over our models
-    _.each(coll.models, function (m) {
-
-      // each iteration... appending the data to our element that Backbone created
-      self.$el.append(s_rendered(m.attributes));
-
-      // sort collection
-        // var sortedByTeam = all_favorites.sortBy(function (sort) {
-        //     return sort.get("team").toLowerCase();
-        // });
-        //
-        // console.log("- Now sorted: ");
-        //
-        // sortedByTeam.forEach(function(model){
-        //   console.log(model.get('team'));
-        // });
+      // console.log(this.el);
 
 
-    });
+      // Iterating over our models
+      _.each(App.all_favorites.models, function (m) {
 
-    // console.log(this.el);
+        // each iteration... appending the data to our element that Backbone created
+        self.$el.append(s_rendered(m.attributes));
 
-    // take the data and append it into a specific element on my page
-    $('#stadium_list').append(this.el);
+        // sort collection
+          // var sortedByTeam = all_favorites.sortBy(function (sort) {
+          //     return sort.get("team").toLowerCase();
+          // });
+          //
+          // console.log("- Now sorted: ");
+          //
+          // sortedByTeam.forEach(function(model){
+          //   console.log(model.get('team'));
+          // });
 
-    return this;
-  }
 
-});
+      });
+
+      // console.log(this.el);
+
+      // take the data and append it into a specific element on my page
+      $('#stadium_list').append(this.el);
+
+      return this;
+    }
+
+  });
+
+}());

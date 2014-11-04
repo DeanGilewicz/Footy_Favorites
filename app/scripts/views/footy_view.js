@@ -1,45 +1,50 @@
-var FavoritesView = Backbone.View.extend({
+(function () {
 
-  tagName: 'ol',
-  className: 'team_area',
+  App.Views.FavoritesView = Backbone.View.extend({
 
-  initialize: function (attrs) {
-    this.render(attrs.collection);
-  },
+    tagName: 'ol',
+    className: 'team_area',
 
-  render: function (coll) {
+    initialize: function () {
+      this.render();
 
-    // binding 'this' to 'self' for use in nested functions/callbacks
-    var self = this;
-    console.log(self);
+    },
 
-    // Underscore Template
-    var t_template = $('#team_template').html();
-    var t_rendered = _.template(t_template);
+    render: function () {
 
-    console.log(this.el);
+      // binding 'this' to 'self' for use in nested functions/callbacks
+      var self = this;
+      // console.log(self);
+
+      // Underscore Template
+      var t_template = $('#team_template').html();
+      var t_rendered = _.template(t_template);
+
+      // console.log(this.el);
 
 
-    // Iterating over our models
-    _.each(coll.models, function (m) {
+      // Iterating over our models
+      _.each(App.all_favorites.models, function (m) {
 
-      // each iteration... appending the data to our element that Backbone created
-      self.$el.append(t_rendered(m.attributes));
+        // each iteration... appending the data to our element that Backbone created
+        self.$el.append(t_rendered(m.attributes));
 
-    });
-
-    // sort collection
-      var sortedByCount = all_favorites.countBy(function (sort) {
-          return sort.get("team");
       });
 
-      console.log(sortedByCount);
-      console.log(" Now sorted ");
+      // sort collection
+        // var sortedByCount = all_favorites.countBy(function (sort) {
+        //     return sort.get("team");
+        // });
+        //
+        // console.log(sortedByCount);
+        // console.log(" Now sorted ");
 
-    // take the data and append it into a specific element on my page
-    $('#team_list').append(this.el);
+      // take the data and append it into a specific element on my page
+      $('#team_list').append(this.el);
 
-    return this;
-  }
+      return this;
+    }
 
-});
+  });
+
+}());
