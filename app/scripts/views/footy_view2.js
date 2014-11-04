@@ -37,13 +37,13 @@
 
       });
 
-        // sort collection
-          // var sortedByCount = all_favorites.countBy(function (sort) {
-          //     return sort.get("team");
-          // });
-          //
-          // console.log(sortedByCount);
-          // console.log(" Now sorted ");
+      // sort collection
+        // var sortedByCount = all_favorites.countBy(function (sort) {
+        //     return sort.get("team");
+        // });
+        //
+        // console.log(sortedByCount);
+        // console.log(" Now sorted ");
 
       // take the data and append it into a specific element on my page
       $('#player_list').append(this.el);
@@ -56,9 +56,6 @@
 
       e.preventDefault();
 
-      // in backbone target element
-      $(e.target);
-
       // Check which fav it is
       var id = $(e.target).attr('id');
 
@@ -69,7 +66,6 @@
       goodbye.destroy();
 
     }
-
 
   });
 

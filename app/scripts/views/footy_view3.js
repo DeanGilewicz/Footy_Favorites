@@ -55,10 +55,7 @@
     deleteMyFav: function (e) {
 
       e.preventDefault();
-
-      // in backbone target element
-      $(e.target);
-
+      
       // Check which fav it is
       var id = $(e.target).attr('id');
 

@@ -46,7 +46,7 @@
         // console.log(" Now sorted ");
 
       // take the data and append it into a specific element on my page
-      $('#stadium_list').append(this.el);
+      $('#league_list').append(this.el);
 
       return this;
 
@@ -55,9 +55,6 @@
     deleteMyFav: function (e) {
 
       e.preventDefault();
-
-      // in backbone target element
-      $(e.target);
 
       // Check which fav it is
       var id = $(e.target).attr('id');
