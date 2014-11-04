@@ -1,6 +1,6 @@
 var FavoritesView2 = Backbone.View.extend({
 
-  tagName: 'ul',
+  tagName: 'ol',
   className: 'player_area',
 
   initialize: function (attrs) {
@@ -39,8 +39,6 @@ var FavoritesView2 = Backbone.View.extend({
 
 
     });
-
-    // console.log(this.el);
 
     // take the data and append it into a specific element on my page
     $('#player_list').append(this.el);

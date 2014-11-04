@@ -1,6 +1,6 @@
 var FavoritesView = Backbone.View.extend({
 
-  tagName: 'ul',
+  tagName: 'ol',
   className: 'team_area',
 
   initialize: function (attrs) {
@@ -33,7 +33,6 @@ var FavoritesView = Backbone.View.extend({
           return sort.get("team");
       });
 
-      $('team_score').append(sortedByCount);
       console.log(sortedByCount);
       console.log(" Now sorted ");
 

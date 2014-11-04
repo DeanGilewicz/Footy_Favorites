@@ -1,6 +1,6 @@
 var FavoritesView4 = Backbone.View.extend({
 
-  tagName: 'ul',
+  tagName: 'ol',
   className: 'league_area',
 
   initialize: function (attrs) {
