@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.ListGetaways = Backbone.View.extend({
+  App.Views.ListGetaway = Backbone.View.extend({
     // changing the el to be a ul and giving it a class name
     tagName: 'ul',
     className: 'allGetaways',

@@ -27,7 +27,7 @@
       var g = new App.Models.Getaway({
         name: $('#user_name').val(),
         destination: $('#getaway_destination').val(),
-        brand: $('#getaway_duration').val()
+        duration: $('#getaway_duration').val()
       });
 
       // save model instance to getaways collection (created in main js)

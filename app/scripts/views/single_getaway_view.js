@@ -44,7 +44,8 @@
         name: $('#update_name').val(),
         destination: $('#update_destination').val(),
         duration: $('update_duration').val(),
-        comments: $('#update_comments').val()
+        comments: $('#update_comments').val(),
+        rating: $('#update_rating').val()
       });
 
       // Save Instance

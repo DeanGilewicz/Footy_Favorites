@@ -41,7 +41,7 @@
     <script type="text/template" id="listTemp">
       <li id="<%= _id %>">
         <a href="#/edit/<%= _id %>">
-          <div><%= name %> by <%= brand %></div>
+          <div><%= name %> visited <%= destination %> and stayed <%= duration %> </div>
           <% if(rating !== '') { %>
               <div><%= rating %></div>
           <% } %>
@@ -60,6 +60,7 @@
               <input type="text" value="<%= destination %>" id="update_destination" />
               <input type="text" value="<%= duration %>" id="update_duration" />
               <textarea id="update_comments"><%= comments %></textarea>
+              <input type="text" value="<%= rating %>" id="update_rating" />
             </div>
             <button>Update Getaway</button>
             <button id="delete">Delete</button>

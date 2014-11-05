@@ -13,6 +13,7 @@
       // allows function to be ran so url can track unique id of getaways #/edit/id
       'edit/:id' : 'editGetaway'
     },
+
     home: function () {
       // ??
       new App.Views.AddGetaway();
