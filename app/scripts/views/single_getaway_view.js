@@ -3,14 +3,14 @@
   App.Views.SingleGetaway = Backbone.View.extend({
     // assigning el to be a ul with a classname
     tagName: 'ul',
-    className: 'coffeeSingle',
+    className: 'getawaySingle',
 
     events: {
       // when form submit (button clicked), will run function
-      'submit #updateCoffee' : 'updateCoffee',
+      'submit #updateGetaway' : 'updateGetaway',
 
-      // when delete id clicked will run function
-      'click #delete' : 'deleteCoffee'
+      // when delete id clicked (button) will run function
+      'click #delete' : 'deleteGetaway'
     },
 
     // dump html from singleTemp script into template
@@ -21,10 +21,10 @@
       this.render();
 
       // empty contents of form
-      $('#coffeeForm').empty();
+      $('#getawayForm').empty();
 
       // Get our Element On Our Page
-      $('#coffeeList').html(this.$el);
+      $('#getawayList').html(this.$el);
     },
 
     render: function () {
@@ -32,33 +32,34 @@
       this.$el.empty();
 
       // add contents to el
-      this.$el.html(this.template(this.options.coffee.toJSON()));
+      this.$el.html(this.template(this.options.getaway.toJSON()));
 
     },
     // function that runs when submit form
-    updateCoffee: function (e) {
+    updateGetaway: function (e) {
       e.preventDefault();
 
       // Update our Model Instance
-      this.options.coffee.set({
+      this.options.getaway.set({
         name: $('#update_name').val(),
-        brand: $('#update_brand').val(),
+        destination: $('#update_destination').val(),
+        duration: $('update_duration').val(),
         comments: $('#update_comments').val()
       });
 
       // Save Instance
-      this.options.coffee.save();
+      this.options.getaway.save();
 
       // Go back to our home page
       App.router.navigate('', {trigger: true});
 
     },
     // function that runs when delete id clicked
-    deleteCoffee: function (e) {
+    deleteGetaway: function (e) {
       e.preventDefault();
 
       // Remove Coffee
-      this.options.coffee.destroy();
+      this.options.getaway.destroy();
 
       // Go to home page
       App.router.navigate('', {trigger: true});
