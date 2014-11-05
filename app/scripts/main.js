@@ -1,23 +1,14 @@
 (function () {
 
-  // Add our form
-  new App.Views.FavoritesForm();
+  // Create Instance of Collection
+  App.getaways = new App.Collections.Getaways();
 
-  // create instance of Favorites Collection
-  App.all_favorites = new App.Collections.Favorites();
+  // Fetch any server-side getaways
+  App.getaways.fetch().done( function () {
 
-
-  // pull all of the favorites entries from our server
-  App.all_favorites.fetch().done(function(){
-
-    new App.Views.FavoritesView();
-
-    new App.Views.FavoritesView2();
-
-    new App.Views.FavoritesView3();
-
-    new App.Views.FavoritesView4();
+    App.router = new App.Routers.AppRouter();
 
   });
+
 
 }());
