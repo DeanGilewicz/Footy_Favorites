@@ -1,6 +1,6 @@
 ## Footy Favorites
 
-A small app for people to post their favorite soccer teams, players, stadiums, and leagues created using Backbone.
+A small app that allows users to log different trips that they have been on.
 
 How to use it
 * Clone my repo
