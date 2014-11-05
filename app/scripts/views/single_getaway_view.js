@@ -43,9 +43,9 @@
       this.options.getaway.set({
         name: $('#update_name').val(),
         destination: $('#update_destination').val(),
-        duration: $('update_duration').val(),
-        comments: $('#update_comments').val(),
-        rating: $('#update_rating').val()
+        duration: $('#update_duration').val(),
+        rating: $('#update_rating').val(),
+        comments: $('#update_comments').val()
       });
 
       // Save Instance

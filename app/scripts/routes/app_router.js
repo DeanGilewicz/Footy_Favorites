@@ -22,7 +22,7 @@
       new App.Views.ListGetaway({ collection: App.getaways });
     },
 
-    editCoffee: function (trip) {
+    editGetaway: function (trip) {
 
       var g = App.getaways.get(trip);
 
