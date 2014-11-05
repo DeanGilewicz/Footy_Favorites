@@ -3,15 +3,15 @@
   App.Views.AddGetaway = Backbone.View.extend({
 
     events: {
-      'submit #addCoffee' : 'addCoffee' // submit form then : run this
+      'submit #addGetaway' : 'addGetaway' // submit form : run this 'addGetaway'
     },
 
     initialize: function () {
       // calling the render function
       this.render();
 
-      // dumping el content into form
-      $('#coffeeForm').html(this.$el);
+      // dumping el content into getaway form div that will display in browser
+      $('#getawayForm').html(this.$el);
     },
 
     render: function () {
@@ -20,16 +20,17 @@
     },
 
     // function that is being ran when event occurs (submit form)
-    addCoffee: function (e) {
+    addGetaway: function (e) {
       e.preventDefault();
 
       // create a new model instance and grab values from form
       var g = new App.Models.Getaway({
-        name: $('#coffee_name').val(),
-        brand: $('#coffee_brand').val()
+        name: $('#user_name').val(),
+        destination: $('#getaway_destination').val(),
+        brand: $('#getaway_duration').val()
       });
 
-      // save model instance to getaways collection
+      // save model instance to getaways collection (created in main js)
       App.getaways.add(g).save();
 
     }
