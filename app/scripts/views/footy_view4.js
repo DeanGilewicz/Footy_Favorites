@@ -38,12 +38,19 @@
       });
 
       // sort collection
-        // var sortedByCount = all_favorites.countBy(function (sort) {
-        //     return sort.get("team");
-        // });
-        //
-        // console.log(sortedByCount);
-        // console.log(" Now sorted ");
+
+      // var sort = App.all_favorites.countBy('league');
+
+
+      // var league_entries = App.all_favorites;
+      // console.log(league_entries);
+      // var sort_league = _.chain(league_entries)
+      //   .countBy('league')
+      //   .pairs()
+      //   .sortBy(1).reverse()
+      //   .pluck(0)
+      //   .value();
+      // console.log(sort_league);
 
       // take the data and append it into a specific element on my page
       $('#league_list').append(this.el);

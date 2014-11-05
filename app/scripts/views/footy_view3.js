@@ -55,7 +55,7 @@
     deleteMyFav: function (e) {
 
       e.preventDefault();
-      
+
       // Check which fav it is
       var id = $(e.target).attr('id');
 
