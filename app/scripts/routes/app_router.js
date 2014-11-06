@@ -5,6 +5,12 @@
     initialize: function () {
       // route the inital URL
       Backbone.history.start();
+
+      // route is event
+      // this.showBtn - callback
+      // this - context
+      this.on('route', this.showBtn, this);
+
     },
 
     routes: {
@@ -26,6 +32,14 @@
 
     addGetaway: function () {
       new App.Views.AddGetaway();
+    },
+
+    showBtn: function(route) {
+      if(route === 'home') {
+        $('.addNewBtn').show();
+      } else {
+        $('.addNewBtn').hide();
+      }
     }
 
   });
