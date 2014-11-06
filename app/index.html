@@ -33,20 +33,26 @@
         <form id="addGetaway">
         <input type="text" id="user_name" placeholder="Your Name" />
         <input type="text" id="getaway_destination" placeholder="Destination Visited" />
-        <input type="text" id="getaway_duration" placeholder="Length of Stay" />
+        <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" />
         <button>Add Getaway</button>
         </form>
     </script>
 
     <script type="text/template" id="listTemp">
       <li id="<%= _id %>">
+        <p><%= destination %></p>
+        <p><%= duration %></p>
+        <p><%= name %></p>
         <a href="#/edit/<%= _id %>">
-          <div><%= name %> visited <%= destination %> and stayed <%= duration %> </div>
           <% if(rating !== '') { %>
-              <div><%= rating %></div>
+            <div><%= rating %></div>
+          <% } else { %>
+            <div>click to add rating</div>
           <% } %>
           <% if(comments !== '') { %>
-              <div><p><%= comments %></p></div>
+            <div><p><%= comments %></p></div>
+          <% } else { %>
+            <div><p>click to add comments</p></div>
           <% } %>
         </a>
       </li>
