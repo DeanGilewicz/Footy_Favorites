@@ -19,6 +19,8 @@
 
   });
 
+
+
 }());
 
 (function () {
@@ -59,7 +61,7 @@
 
       // create a new model instance and grab values from form
       var g = new App.Models.Getaway({
-        name: $('#user_name').val(),
+        name: $('#name').val(),
         destination: $('#getaway_destination').val(),
         duration: $('#getaway_duration').val()
       });
@@ -140,8 +142,11 @@
       this.options = options;
       this.render();
 
-      // empty contents of form
+      // empty contents of form (so it doesn't display)
       $('#getawayForm').empty();
+
+      // empty contents of button (so it doesn't display)
+      $('#sort').empty();
 
       // Get our Element On Our Page
       $('#getawayList').html(this.$el);
