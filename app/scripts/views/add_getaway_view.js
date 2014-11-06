@@ -17,7 +17,6 @@
     render: function () {
       // dumping template into el
       this.$el.html($('#addTemp').html());
-      console.log(this.$el);
     },
 
     // function that is being ran when event occurs (submit form)
@@ -26,7 +25,7 @@
 
       // create a new model instance and grab values from form
       var g = new App.Models.Getaway({
-        name: $('#user_name').val(),
+        name: $('#name').val(),
         destination: $('#getaway_destination').val(),
         duration: $('#getaway_duration').val()
       });
