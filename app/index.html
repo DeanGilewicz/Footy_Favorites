@@ -25,7 +25,7 @@
 
     <div class="hero-unit">
       <h1>Getaways</h1>
-      <a href="#/add" class="addBtn"><button>Add</button></a>
+      <a href="#/add" class="addNewBtn"><button>Add New Getaway</button></a>
       <!-- <button name="sign_up">Sign Up</button> -->
       <!-- <div id="getawayForm"></div> -->
       <!-- <div id="sort">
@@ -45,10 +45,11 @@
 
     <script type="text/template" id="addTemp">
       <form id="addGetaway">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="text" id="getaway_destination" placeholder="Destination Visited" required />
-        <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" required />
-        <button>Add Getaway</button>
+        <input type="text" id="name" placeholder="Your Name" />
+        <input type="text" id="getaway_destination" placeholder="Destination Visited" />
+        <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" />
+        <button class="addBtn">Add Getaway</button>
+        <button class="returnHome">Home</button>
       </form>
     </script>
 

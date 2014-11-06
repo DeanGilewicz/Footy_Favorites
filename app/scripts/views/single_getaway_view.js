@@ -19,7 +19,6 @@
     initialize: function (options) {
       this.options = options;
       this.render();
-
       // empty contents of button (so it doesn't display) THIS IS FOR SORT BUTTONS
       // $('#sort').empty();
 
@@ -65,7 +64,7 @@
       // Go to home page
       App.router.navigate('', {trigger: true});
 
-    }
+    },
 
   });
 
