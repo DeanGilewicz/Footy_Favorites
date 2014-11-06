@@ -10,14 +10,17 @@
     // adding template and dumping html from list temp into it
     template: _.template($('#listTemp').html()),
 
-    initialize: function () {
+    initialize: function (options) {
+
+      this.options = options;
+
       // calling render
       this.render();
 
-      // ??
+      // remove all things bound to collection
       this.collection.off();
 
-      // ??
+      // sync all things to our collection
       this.collection.on('sync', this.render, this);
 
       // Get our Element On Our Page

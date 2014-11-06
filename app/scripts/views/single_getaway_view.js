@@ -20,11 +20,8 @@
       this.options = options;
       this.render();
 
-      // empty contents of form (so it doesn't display)
-      $('#getawayForm').empty();
-
-      // empty contents of button (so it doesn't display)
-      $('#sort').empty();
+      // empty contents of button (so it doesn't display) THIS IS FOR SORT BUTTONS
+      // $('#sort').empty();
 
       // Get our Element On Our Page
       $('#getawayList').html(this.$el);
@@ -47,7 +44,7 @@
         name: $('#update_name').val(),
         destination: $('#update_destination').val(),
         duration: $('#update_duration').val(),
-        rating: $('#update_rating').val(),
+        rating: $('input[name="rating"]:checked').val(),
         comments: $('#update_comments').val()
       });
 

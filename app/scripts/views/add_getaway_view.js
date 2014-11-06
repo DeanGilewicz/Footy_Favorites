@@ -11,7 +11,7 @@
       this.render();
 
       // dumping el content into getaway form div that will display in browser
-      $('#getawayForm').html(this.$el);
+      $('#getawayList').html(this.$el);
     },
 
     render: function () {
@@ -31,7 +31,11 @@
       });
 
       // save model instance to getaways collection (created in main js)
-      App.getaways.add(g).save();
+      App.getaways.add(g).save(null, {
+        success: function () {
+          App.router.navigate('', { trigger: true });
+        }
+      });
 
     }
 
