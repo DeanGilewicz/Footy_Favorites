@@ -17,6 +17,7 @@
     render: function () {
       // dumping template into el
       this.$el.html($('#addTemp').html());
+      console.log(this.$el);
     },
 
     // function that is being ran when event occurs (submit form)

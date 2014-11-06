@@ -26,6 +26,17 @@
     <div class="hero-unit">
       <h1>Getaways</h1>
       <div id="getawayForm"></div>
+      <div id="sort">
+        <button>
+          <select>
+            <option value="Sort by" selected = "selected">Sort By</option>
+            <option value="name">name</option>
+            <option value="destination">destination</option>
+            <option value="length of stay">duration</option>
+            <option value="rating">rating</option>
+          </select>
+        </button>
+      </div>
       <div id="getawayList"></div>
     </div>
 
@@ -41,16 +52,16 @@
     <script type="text/template" id="listTemp">
       <li id="<%= _id %>">
         <p><%= destination %></p>
-        <p><%= duration %></p>
-        <p><%= name %></p>
+        <p>Duration: <%= duration %> days</p>
+        <p>Traveler: <%= name %></p>
         <a href="#/edit/<%= _id %>">
           <% if(rating !== '') { %>
-            <div><%= rating %></div>
+            <div><p>Rating: <%= rating %></p></div>
           <% } else { %>
-            <div>click to add rating</div>
+            <div><p>click to add rating</p></div>
           <% } %>
           <% if(comments !== '') { %>
-            <div><p><%= comments %></p></div>
+            <div><p>Comments: <%= comments %></p></div>
           <% } else { %>
             <div><p>click to add comments</p></div>
           <% } %>
@@ -64,7 +75,7 @@
             <div>
               <input type="text" value="<%= name %>" id="update_name" />
               <input type="text" value="<%= destination %>" id="update_destination" />
-              <input type="text" value="<%= duration %>" id="update_duration" />
+              <input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
               <input type="text" value="<%= rating %>" id="update_rating" />
               <textarea id="update_comments"><%= comments %></textarea>
             </div>
@@ -73,7 +84,6 @@
         </form>
       </li>
     </script>
-
 
 
     <!-- build:js scripts/vendor.js -->
