@@ -20,8 +20,8 @@
       'sort/:sortby' : 'home'
     },
 
-    home: function () {
-      new App.Views.ListGetaway({ collection: App.getaways });
+    home: function (sortby) {
+      new App.Views.ListGetaway({ collection: App.getaways, sort: sortby });
     },
 
     editGetaway: function (trip) {

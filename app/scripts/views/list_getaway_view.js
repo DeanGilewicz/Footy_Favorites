@@ -40,14 +40,14 @@
       var local_collection = this.collection.sortBy( function (model) {
         return model.get(self.options.sort);
       });
-        _.each(local_collection, function (c) {
-        self.$el.append(self.template(c.toJSON()));
+        _.each(local_collection, function (g) {
+        self.$el.append(self.template(g.toJSON()));
       })
     } else {
       // Sort from our default comparator in our collection constructor
       this.collection.sort();
-      this.collection.each(function (c) {
-        self.$el.append(self.template(c.toJSON()));
+      this.collection.each(function (g) {
+        self.$el.append(self.template(g.toJSON()));
       });
     }
 
