@@ -10,7 +10,8 @@
       duration: '',
       rating: '',
       comments: '',
-      travelDate: ''
+      travelDate: '',
+      img: ''
     },
 
     initialize: function () {

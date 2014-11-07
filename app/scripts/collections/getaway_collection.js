@@ -11,11 +11,3 @@
 
 
 }());
-
-// Backbone.Collection.extend({
-//
-//   comparator: function(a, b) {
-//     return -a.get('name').localeCompare(b.get('name'));
-//   }
-//
-// });

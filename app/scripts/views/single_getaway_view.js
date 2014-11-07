@@ -45,7 +45,8 @@
         duration: $('#update_duration').val(),
         rating: $('option[name="rating"]:selected').val(),
         comments: $('#update_comments').val(),
-        travelDate: $('#update_travelDate').val()
+        travelDate: $('#update_travelDate').val(),
+        img: $('#update_img').val()
       });
       // Save Instance
       this.options.getaway.save();

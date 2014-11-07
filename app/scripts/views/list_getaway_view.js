@@ -39,7 +39,7 @@
 
       console.log(this.options.reverse);
       // Setting up a localized collection to sort by our sort param
-      var local_collection = this.collection.sortBy( function (model, modelR) {
+      var local_collection = this.collection.sortBy( function (model) {
         if (self.options.reverse == true) {
           return -model.get(self.options.sort);
         } else {
