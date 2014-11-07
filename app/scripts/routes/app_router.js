@@ -17,11 +17,12 @@
       // allows function to be ran so url can track unique id of getaways #/edit/id
       'edit/:id' : 'editGetaway',
       'add' : 'addGetaway',
-      'sort/:sortby' : 'home'
+      'sort/:sortby(/:reverse)' : 'home'
     },
 
-    home: function (sortby) {
-      new App.Views.ListGetaway({ collection: App.getaways, sort: sortby });
+    home: function (sortby, reverse) {
+      var sort_check = (reverse == undefined) ? false : true;
+      new App.Views.ListGetaway({ collection: App.getaways, sort: sortby, reverse: sort_check });
     },
 
     editGetaway: function (trip) {

@@ -36,9 +36,15 @@
 
     // Sorting On The Fly
     if (this.options.sort != undefined) {
+
+      console.log(this.options.reverse);
       // Setting up a localized collection to sort by our sort param
-      var local_collection = this.collection.sortBy( function (model) {
-        return model.get(self.options.sort);
+      var local_collection = this.collection.sortBy( function (model, modelR) {
+        if (self.options.reverse == true) {
+          return -model.get(self.options.sort);
+        } else {
+          return model.get(self.options.sort);
+        }
       });
         _.each(local_collection, function (g) {
         self.$el.append(self.template(g.toJSON()));
