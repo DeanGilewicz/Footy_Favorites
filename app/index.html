@@ -36,9 +36,10 @@
 
     <script type="text/template" id="addTemp">
       <form id="addGetaway">
-        <input type="text" id="name" placeholder="Your Name" />
-        <input type="text" id="getaway_destination" placeholder="Destination Visited" />
-        <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" />
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="getaway_destination" placeholder="Destination Visited" required />
+        <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" required />
+        <input type="date" id="getaway_postDate" value"" required />
         <button class="addBtn">Add Getaway</button>
         <a href="#/" class="returnHome">Home</a>
       </form>
@@ -48,6 +49,7 @@
       <li id="<%= _id %>">
         <p><%= destination %></p>
         <p>Duration: <%= duration %> days</p>
+        <p>Date Posted: <%= postDate %></p>
         <p>Traveler: <%= name %></p>
         <a href="#/edit/<%= _id %>">
           <% if(rating !== '') { %>
@@ -74,6 +76,7 @@
               <span>Name: </span><input type="text" value="<%= name %>" id="update_name" />
               <span>Destination: </span><input type="text" value="<%= destination %>" id="update_destination" />
               <span>Duration (days): </span><input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
+              <span>Date Posted: </span><input type="date" id="update_postDate" value"" />
               <div>
               <span>Rating: </span>
                 <select>

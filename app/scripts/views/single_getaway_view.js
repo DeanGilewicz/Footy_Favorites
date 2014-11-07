@@ -44,7 +44,8 @@
         destination: $('#update_destination').val(),
         duration: $('#update_duration').val(),
         rating: $('option[name="rating"]:checked').val(),
-        comments: $('#update_comments').val()
+        comments: $('#update_comments').val(),
+        postDate: $('#update_postDate').val()
       });
 
       // Save Instance

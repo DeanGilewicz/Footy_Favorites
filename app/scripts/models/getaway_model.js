@@ -9,7 +9,8 @@
       destination: '',
       duration: '',
       rating: '',
-      comments: ''
+      comments: '',
+      postDate: ''
     },
 
     initialize: function () {
