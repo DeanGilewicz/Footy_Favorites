@@ -10,7 +10,7 @@
       duration: '',
       rating: '',
       comments: '',
-      postDate: ''
+      travelDate: ''
     },
 
     initialize: function () {

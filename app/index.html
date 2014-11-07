@@ -28,6 +28,7 @@
       <a href="#/add" class="addNewBtn"><button>Add New Getaway</button></a>
       <div class="sorts">
         <span>Sort By: </span>
+        <a href="#/">Date</a>
         <a href="#/sort/rating">Rating</a>
         <a href="#/sort/destination">Destination</a>
       </div>
@@ -39,7 +40,7 @@
         <input type="text" id="name" placeholder="Your Name" required />
         <input type="text" id="getaway_destination" placeholder="Destination Visited" required />
         <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" required />
-        <input type="date" id="getaway_postDate" value"" required />
+        <input type="date" id="getaway_travelDate" required />
         <button class="addBtn">Add Getaway</button>
         <a href="#/" class="returnHome">Home</a>
       </form>
@@ -49,7 +50,7 @@
       <li id="<%= _id %>">
         <p><%= destination %></p>
         <p>Duration: <%= duration %> days</p>
-        <p>Date Posted: <%= postDate %></p>
+        <p>Travel Date: <%= moment(travelDate).format("MMM Do YY") %></p>
         <p>Traveler: <%= name %></p>
         <a href="#/edit/<%= _id %>">
           <% if(rating !== '') { %>
@@ -76,7 +77,7 @@
               <span>Name: </span><input type="text" value="<%= name %>" id="update_name" />
               <span>Destination: </span><input type="text" value="<%= destination %>" id="update_destination" />
               <span>Duration (days): </span><input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
-              <span>Date Posted: </span><input type="date" id="update_postDate" value"" />
+              <span>Travel Date: </span><input type="date" value="<%= travelDate %>" id="update_travelDate" />
               <div>
               <span>Rating: </span>
                 <select>
@@ -101,6 +102,8 @@
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/backbone/backbone.js"></script>
+    <script src="../bower_components/moment/moment.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 

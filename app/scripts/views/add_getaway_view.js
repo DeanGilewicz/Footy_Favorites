@@ -29,7 +29,7 @@
         name: $('#name').val(),
         destination: $('#getaway_destination').val(),
         duration: $('#getaway_duration').val(),
-        postDate: $('#getaway_postDate').val()
+        travelDate: $('#getaway_travelDate').val()
       });
 
       // save model instance to getaways collection (created in main js)
