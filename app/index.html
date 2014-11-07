@@ -26,22 +26,12 @@
     <div class="hero-unit">
       <h1>Getaways</h1>
       <a href="#/add" class="addNewBtn"><button>Add New Getaway</button></a>
-      <!-- <button name="sign_up">Sign Up</button> -->
-      <!-- <div id="getawayForm"></div> -->
-      <!-- <div id="sort">
-        <button>
-          <select>
-            <option value="Sort by" selected = "selected">Sort By</option>
-            <option value="name">name</option>
-            <option value="destination">destination</option>
-            <option value="length of stay">duration</option>
-            <option value="rating">rating</option>
-          </select>
-        </button>
-      </div> -->
+      <div class="sorts">
+        <a href="#/">Rating</a>
+        <a href="#/sort/destination">Destination</a>
+      </div>
       <div id="getawayList"></div>
     </div>
-
 
     <script type="text/template" id="addTemp">
       <form id="addGetaway">
@@ -84,26 +74,13 @@
               <span>Duration (days): </span><input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
               <div>
               <span>Rating: </span>
-                <label>
-                  <input type="radio" name="rating" value="1" <% if (rating == "1") { %>checked<% } %>>
-                  <span>1</span>
-                </label>
-                <label>
-                  <input type="radio" name="rating" value="2" <% if (rating == "2") { %>checked<% } %>>
-                  <span>2</span>
-                </label>
-                <label>
-                  <input type="radio" name="rating" value="3" <% if (rating == "3") { %>checked<% } %>>
-                  <span>3</span>
-                </label>
-                <label>
-                  <input type="radio" name="rating" value="4" <% if (rating == "4") { %>checked<% } %>>
-                  <span>4</span>
-                </label>
-                <label>
-                  <input type="radio" name="rating" value="5" <% if (rating == "5") { %>checked<% } %>>
-                  <span>5</span>
-                </label>
+                <select>
+                  <option name="rating" value="1" <% if (rating == "1") { %>checked<% } %><span>1 (low)</span></option>
+                  <option name="rating" value="2" <% if (rating == "2") { %>checked<% } %><span>2</span></option>
+                  <option name="rating" value="3" <% if (rating == "3") { %>checked<% } %><span>3</span></option>
+                  <option name="rating" value="4" <% if (rating == "4") { %>checked<% } %><span>4</span></option>
+                  <option name="rating" value="5" <% if (rating == "5") { %>checked<% } %><span>5 (high)</span></option>
+                </select>
               </div>
               <textarea id="update_comments" placeholder="enter a comment..."><%= comments %></textarea>
             </div>

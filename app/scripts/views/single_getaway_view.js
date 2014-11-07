@@ -43,7 +43,7 @@
         name: $('#update_name').val(),
         destination: $('#update_destination').val(),
         duration: $('#update_duration').val(),
-        rating: $('input[name="rating"]:checked').val(),
+        rating: $('option[name="rating"]:checked').val(),
         comments: $('#update_comments').val()
       });
 

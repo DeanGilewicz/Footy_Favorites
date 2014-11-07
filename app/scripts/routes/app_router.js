@@ -6,9 +6,7 @@
       // route the inital URL
       Backbone.history.start();
 
-      // route is event
-      // this.showBtn - callback
-      // this - context
+      // 'route' is event, this.showBtn - callback, this - context
       this.on('route', this.showBtn, this);
 
     },
@@ -18,7 +16,8 @@
       '' : 'home',
       // allows function to be ran so url can track unique id of getaways #/edit/id
       'edit/:id' : 'editGetaway',
-      'add' : 'addGetaway'
+      'add' : 'addGetaway',
+      'sort/:sortby' : 'home'
     },
 
     home: function () {
