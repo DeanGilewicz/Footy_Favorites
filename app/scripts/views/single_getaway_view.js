@@ -47,7 +47,6 @@
         comments: $('#update_comments').val(),
         postDate: $('#update_postDate').val()
       });
-
       // Save Instance
       this.options.getaway.save();
 
