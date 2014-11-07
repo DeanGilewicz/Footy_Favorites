@@ -36,9 +36,9 @@
 
     showBtn: function(route) {
       if(route === 'home') {
-        $('.addNewBtn').show();
+        $('.addNewBtn').removeClass("hide");
       } else {
-        $('.addNewBtn').hide();
+        $('.addNewBtn').addClass("hide");
       }
     }
 
