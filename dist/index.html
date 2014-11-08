@@ -17,37 +17,27 @@
 
     <div class="hero-unit">
       <h1>Getaways</h1>
-      <button name="sign_up">Sign Up</button>
-      <div id="getawayForm"></div>
-      <div id="sort">
-        <button>
-          <select>
-            <option value="Sort by" selected = "selected">Sort By</option>
-            <option value="name">name</option>
-            <option value="destination">destination</option>
-            <option value="length of stay">duration</option>
-            <option value="rating">rating</option>
-          </select>
-        </button>
+      <a href="#/add" class="addNewBtn"><button>Add New Getaway</button></a>
+      <div class="sorts">
+        <span>Sort By: </span>
+        <a href="#/">Date (oldest to newest)</a>
+        <a href="#/sort/date/reverse">Date (newest to oldest)</a>
+        <a href="#/sort/rating">Rating (low to high)</a>
+        <a href="#/sort/rating/reverse">Rating (high to low)</a>
+        <a href="#/sort/destination">Destination (a to z)</a>
+        <a href="#/sort/destination/reverse">Destination (z to a)</a>
       </div>
       <div id="getawayList"></div>
     </div>
 
-
     <script type="text/template" id="addTemp">
-      <h3>Sign in to post your getaway...</h3>
-
-      <form id="signInForm">
-        <input type="email" id="user_name" placeholder="email" />
-        <input type="password" maxlength="10" id="user_password" placeholder="password" />
-        <button name="sign_in">Sign In</button>
-      </form>
-
       <form id="addGetaway">
         <input type="text" id="name" placeholder="Your Name" required />
         <input type="text" id="getaway_destination" placeholder="Destination Visited" required />
         <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" required />
-        <button>Add Getaway</button>
+        <input type="date" id="getaway_travelDate" required />
+        <button class="addBtn">Add Getaway</button>
+        <a href="#/" class="returnHome">Home</a>
       </form>
     </script>
 
@@ -55,31 +45,53 @@
       <li id="<%= _id %>">
         <p><%= destination %></p>
         <p>Duration: <%= duration %> days</p>
+        <p>Travel Date: <%= moment(travelDate).format("MMM Do YY") %></p>
         <p>Traveler: <%= name %></p>
         <a href="#/edit/<%= _id %>">
           <% if(rating !== '') { %>
-            <div><p>Rating: <%= rating %></p></div>
+            <div><p>Rating: <%= rating %> out of 5</p></div>
           <% } else { %>
             <div><p>click to add rating</p></div>
           <% } %>
+        </a>
+        <a href="#/edit/<%= _id %>">
           <% if(comments !== '') { %>
             <div><p>Comments: <%= comments %></p></div>
           <% } else { %>
             <div><p>click to add comments</p></div>
           <% } %>
         </a>
+        <a href="#/edit/<%= _id %>">
+          <% if(img !== '') { %>
+            <div><p>Photo: <img src="<%= img %>" width="100", height="100"></p></div>
+          <% } else { %>
+            <div><p>click to add a photo</p></div>
+          <% } %>
+        </a>
       </li>
     </script>
 
     <script type="text/template" id="singleTemp">
+      <a href="#/"<button class="returnHome">Home</button></a>
       <li id="<%= _id %>">
         <form id="updateGetaway">
             <div>
-              <input type="text" value="<%= name %>" id="update_name" />
-              <input type="text" value="<%= destination %>" id="update_destination" />
-              <input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
-              <input type="text" value="<%= rating %>" id="update_rating" />
-              <textarea id="update_comments"><%= comments %></textarea>
+              <span>Name: </span><input type="text" value="<%= name %>" id="update_name" />
+              <span>Destination: </span><input type="text" value="<%= destination %>" id="update_destination" />
+              <span>Duration (days): </span><input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
+              <span>Travel Date: </span><input type="date" value="<%= travelDate %>" id="update_travelDate" />
+              <div>
+              <span>Rating: </span>
+                <select>
+                  <option name="rating" value="1" <% if (rating == "1") { %>selected="selected"<% } %><span>1 (low)</span></option>
+                  <option name="rating" value="2" <% if (rating == "2") { %>selected="selected"<% } %><span>2</span></option>
+                  <option name="rating" value="3" <% if (rating == "3") { %>selected="selected"<% } %><span>3</span></option>
+                  <option name="rating" value="4" <% if (rating == "4") { %>selected="selected"<% } %><span>4</span></option>
+                  <option name="rating" value="5" <% if (rating == "5") { %>selected="selected"<% } %><span>5 (high)</span></option>
+                </select>
+              </div>
+              <textarea id="update_comments" placeholder="enter a comment..."><%= comments %></textarea>
+              <span>Photo (url): </span><input type="text" value="<%= img %>" id="update_img" />
             </div>
             <button>Update Getaway</button>
             <button id="delete">Delete</button>

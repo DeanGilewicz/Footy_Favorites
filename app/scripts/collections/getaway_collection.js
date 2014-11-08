@@ -6,7 +6,9 @@
     comparator: function (model, modelR) {
       return -model.get('destination').localeCompare(modelR.get('destination'));
     },
+
     url: 'http://tiy-atl-fe-server.herokuapp.com/collections/getaway1'
+
   });
 
 
