@@ -37,8 +37,10 @@
     showBtn: function(route) {
       if(route === 'home') {
         $('.addNewBtn').removeClass("hide");
+        $('.sorts').removeClass("hide");
       } else {
         $('.addNewBtn').addClass("hide");
+        $('.sorts').addClass("hide");
       }
     }
 
