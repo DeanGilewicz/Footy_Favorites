@@ -37,13 +37,17 @@
     // Sorting On The Fly
     if (this.options.sort != undefined) {
 
-      console.log(this.options.reverse);
       // Setting up a localized collection to sort by our sort param
       var local_collection = this.collection.sortBy( function (model) {
-        if (self.options.reverse == true) {
-          return -model.get(self.options.sort);
+        if(self.options.sort == 'travelDate') {
+          mval = new Date(model.get(self.options.sort)).getTime();
         } else {
-          return model.get(self.options.sort);
+          mval = model.get(self.options.sort);
+        }
+        if(self.options.reverse == true) {
+          return -mval;
+        } else {
+          return mval;
         }
       });
         _.each(local_collection, function (g) {
