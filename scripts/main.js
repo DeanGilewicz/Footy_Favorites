@@ -9,7 +9,9 @@
       destination: '',
       duration: '',
       rating: '',
-      comments: ''
+      comments: '',
+      travelDate: '',
+      img: ''
     },
 
     initialize: function () {
@@ -19,8 +21,6 @@
 
   });
 
-
-
 }());
 
 (function () {
@@ -28,7 +28,12 @@
   // Collection
   App.Collections.Getaways = Backbone.Collection.extend({
     model: App.Models.Getaway,
+    comparator: function (model, modelR) {
+      return -model.get('destination').localeCompare(modelR.get('destination'));
+    },
+
     url: 'http://tiy-atl-fe-server.herokuapp.com/collections/getaway1'
+
   });
 
 
@@ -43,11 +48,12 @@
     },
 
     initialize: function () {
+
       // calling the render function
       this.render();
 
       // dumping el content into getaway form div that will display in browser
-      $('#getawayForm').html(this.$el);
+      $('#getawayList').html(this.$el);
     },
 
     render: function () {
@@ -63,11 +69,16 @@
       var g = new App.Models.Getaway({
         name: $('#name').val(),
         destination: $('#getaway_destination').val(),
-        duration: $('#getaway_duration').val()
+        duration: $('#getaway_duration').val(),
+        travelDate: $('#getaway_travelDate').val()
       });
 
       // save model instance to getaways collection (created in main js)
-      App.getaways.add(g).save();
+      App.getaways.add(g).save(null, {
+        success: function () {
+          App.router.navigate('', { trigger: true });
+        }
+      });
 
     }
 
@@ -87,14 +98,17 @@
     // adding template and dumping html from list temp into it
     template: _.template($('#listTemp').html()),
 
-    initialize: function () {
+    initialize: function (options) {
+
+      this.options = options;
+
       // calling render
       this.render();
 
-      // ??
+      // remove all things bound to collection
       this.collection.off();
 
-      // ??
+      // sync all things to our collection
       this.collection.on('sync', this.render, this);
 
       // Get our Element On Our Page
@@ -108,10 +122,28 @@
       // Empty out
       this.$el.empty();
 
-      // ??
+    // Sorting On The Fly
+    if (this.options.sort != undefined) {
+
+      console.log(this.options.reverse);
+      // Setting up a localized collection to sort by our sort param
+      var local_collection = this.collection.sortBy( function (model) {
+        if (self.options.reverse == true) {
+          return -model.get(self.options.sort);
+        } else {
+          return model.get(self.options.sort);
+        }
+      });
+        _.each(local_collection, function (g) {
+        self.$el.append(self.template(g.toJSON()));
+      })
+    } else {
+      // Sort from our default comparator in our collection constructor
+      this.collection.sort();
       this.collection.each(function (g) {
         self.$el.append(self.template(g.toJSON()));
       });
+    }
 
       return this;
     }
@@ -141,12 +173,8 @@
     initialize: function (options) {
       this.options = options;
       this.render();
-
-      // empty contents of form (so it doesn't display)
-      $('#getawayForm').empty();
-
-      // empty contents of button (so it doesn't display)
-      $('#sort').empty();
+      // empty contents of button (so it doesn't display) THIS IS FOR SORT BUTTONS
+      // $('#sort').empty();
 
       // Get our Element On Our Page
       $('#getawayList').html(this.$el);
@@ -169,10 +197,11 @@
         name: $('#update_name').val(),
         destination: $('#update_destination').val(),
         duration: $('#update_duration').val(),
-        rating: $('#update_rating').val(),
-        comments: $('#update_comments').val()
+        rating: $('option[name="rating"]:selected').val(),
+        comments: $('#update_comments').val(),
+        travelDate: $('#update_travelDate').val(),
+        img: $('#update_img').val()
       });
-
       // Save Instance
       this.options.getaway.save();
 
@@ -190,7 +219,7 @@
       // Go to home page
       App.router.navigate('', {trigger: true});
 
-    }
+    },
 
   });
 
@@ -203,28 +232,41 @@
     initialize: function () {
       // route the inital URL
       Backbone.history.start();
+
+      // 'route' is event, this.showBtn - callback, this - context
+      this.on('route', this.showBtn, this);
+
     },
 
     routes: {
       // sets the initial page to 'home'
       '' : 'home',
       // allows function to be ran so url can track unique id of getaways #/edit/id
-      'edit/:id' : 'editGetaway'
+      'edit/:id' : 'editGetaway',
+      'add' : 'addGetaway',
+      'sort/:sortby(/:reverse)' : 'home'
     },
 
-    home: function () {
-      // ??
-      new App.Views.AddGetaway();
-
-      // ??
-      new App.Views.ListGetaway({ collection: App.getaways });
+    home: function (sortby, reverse) {
+      var sort_check = (reverse == undefined) ? false : true;
+      new App.Views.ListGetaway({ collection: App.getaways, sort: sortby, reverse: sort_check });
     },
 
     editGetaway: function (trip) {
-
       var g = App.getaways.get(trip);
-
       new App.Views.SingleGetaway({ getaway: g });
+    },
+
+    addGetaway: function () {
+      new App.Views.AddGetaway();
+    },
+
+    showBtn: function(route) {
+      if(route === 'home') {
+        $('.addNewBtn').removeClass("hide");
+      } else {
+        $('.addNewBtn').addClass("hide");
+      }
     }
 
   });
