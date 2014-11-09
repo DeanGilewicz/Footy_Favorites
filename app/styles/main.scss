@@ -8,9 +8,6 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 62.5%;
-  background-image: url('../images/bgimg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
 
   .header {
     height: 50px;
@@ -20,6 +17,10 @@ body {
   .hero-unit {
     margin: 0px auto;
     width: 100%;
+    min-height: 600px;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: fill;
     font-size: 1.5em;
     font-weight: 200;
     line-height: 30px;
@@ -49,6 +50,29 @@ body {
 
       .allGetaways {
         overflow: auto;
+
+        a {
+          color: HSLA(223, 76%, 15%, 1);
+        }
+      }
+
+      #addGetaway {
+        margin: 80px auto 0px auto;
+        width: 50%;
+
+        .returnHome {
+          float: right;
+          padding: 5px 10px 5px 10px;
+          background-color: HSLA(215, 55%, 54%, 1);
+          color: white;
+          font-weight: bold;
+          border-radius: 3px;
+
+          &:hover {
+            background-color: HSLA(215, 55%, 40%, 1);
+          }
+
+        }
       }
 
       li {
@@ -57,9 +81,10 @@ body {
         margin: 10px 24px 50px 0px;
         border: 1px solid HSLA(223, 76%, 15%, 1);
         border-radius: 20px;
-        // background-color: HSLA(223, 76%, 85%, 1);
+        background-color: HSLA(0, 0%, 99%, .5);
         text-align: center;
         font-size: 1.2em;
+        color: HSLA(223, 76%, 15%, 1);
         cursor: pointer;
 
         &:hover {
@@ -67,7 +92,7 @@ body {
         }
 
         &:nth-child(2n) {
-          background-color: HSLA(223, 76%, 65%, 1);
+          background-color: HSLA(215, 55%, 54%, .5);
         }
 
         & > p:first-child {

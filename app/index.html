@@ -54,11 +54,11 @@
     <script type="text/template" id="addTemp">
       <form id="addGetaway">
         <input type="text" id="name" placeholder="Your Name" required />
-        <input type="text" id="getaway_destination" placeholder="Destination Visited" required />
-        <input type="number" min="1" max="100" id="getaway_duration" placeholder="Length of Stay in Days" required />
-        <input type="date" id="getaway_travelDate" required />
+        <input type="text" id="getaway_destination" placeholder="Destination" required />
+        <input type="number" min="1" max="100" id="getaway_duration" placeholder="No. of Days" required />
+        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="getaway_travelDate" placeholder="Date of Travel" required />
         <button class="addBtn">Add Getaway</button>
-        <a href="#/" class="returnHome">Home</a>
+        <a href="#/" class="returnHome">Cancel</a>
       </form>
     </script>
 
@@ -84,7 +84,7 @@
         </a>
         <a href="#/edit/<%= _id %>">
           <% if(img !== '') { %>
-            <div><p>Photo: <img src="<%= img %>" width="100", height="100"></p></div>
+            <div><p><img src="<%= img %>" width="100%"></p></div>
           <% } else { %>
             <div><p>click to add a photo</p></div>
           <% } %>
