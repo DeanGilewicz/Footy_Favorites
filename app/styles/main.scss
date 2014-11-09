@@ -71,9 +71,18 @@ body {
           &:hover {
             background-color: HSLA(215, 55%, 40%, 1);
           }
-
         }
       }
+
+      // .getawaySingle {
+      //   overflow: auto;
+      //   text-align: center;
+      //   width: 100%;
+      // }
+
+      // #updateGetaway {
+      //   width: 50%;
+      // }
 
       li {
         @include span-columns(3);
