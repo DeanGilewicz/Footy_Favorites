@@ -28,12 +28,14 @@
       <a href="#/add" class="addNewBtn"><button>Add New Getaway</button></a>
       <div class="sorts">
         <span>Sort By: </span>
-        <a href="#/">Date (oldest to newest)</a>
-        <a href="#/sort/travelDate/reverse">Date (newest to oldest)</a>
-        <a href="#/sort/rating">Rating (low to high)</a>
-        <a href="#/sort/rating/reverse">Rating (high to low)</a>
-        <a href="#/sort/destination">Destination (a to z)</a>
-        <!-- <a href="#/sort/destination/reverse">Destination (z to a)</a> -->
+        <select id="sorting">
+          <option value="#/">Date (oldest to newest)</option>
+          <option value="#/sort/travelDate/reverse">Date (newest to oldest)</option>
+          <option value="#/sort/rating">Rating (low to high)</option>
+          <option value="#/sort/rating/reverse">Rating (high to low)</option>
+          <option value="#/sort/destination">Destination (a to z)</option>
+          <!-- <a href="#/sort/destination/reverse">Destination (z to a)</a> -->
+        </select>
       </div>
       <div id="getawayList"></div>
     </div>
