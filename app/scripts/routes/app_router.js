@@ -38,9 +38,6 @@
       if(route === 'home') {
         $('.addNewBtn').removeClass("hide");
         $('.sorts').removeClass("hide");
-        $("#sorting").change(function() {
-          document.location.href = $(this).val();
-        });
       } else {
         $('.addNewBtn').addClass("hide");
         $('.sorts').addClass("hide");

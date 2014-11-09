@@ -8,6 +8,9 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 62.5%;
+  background-image: url('../images/bgimg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .header {
     height: 50px;
@@ -20,21 +23,25 @@ body {
     font-size: 1.5em;
     font-weight: 200;
     line-height: 30px;
-    background-color: #fafafa;
     padding: 10px;
 
     h1 {
       margin: 10px auto;
       text-align: center;
       color: HSLA(224, 72%, 15%, 1);
-      font-size: 4em;
+      font-size: 5em;
+      font-family: 'Stardos Stencil', cursive;
       line-height: 1;
       letter-spacing: -1px;
     }
 
-    .sorts {
-      // display: block;
+    .addNewBtn {
+      margin: 40px;
       text-align: center;
+    }
+
+    #sorting {
+      margin: 50px auto;
     }
 
     #getawayList {
@@ -47,10 +54,10 @@ body {
       li {
         @include span-columns(3);
         @include omega(4n);
-        margin-bottom: 20px;
+        margin: 10px 24px 50px 0px;
         border: 1px solid HSLA(223, 76%, 15%, 1);
         border-radius: 20px;
-        background-color: HSLA(223, 76%, 85%, 1);
+        // background-color: HSLA(223, 76%, 85%, 1);
         text-align: center;
         font-size: 1.2em;
         cursor: pointer;
