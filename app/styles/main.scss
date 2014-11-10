@@ -81,15 +81,49 @@ body {
         }
       }
 
-      // .getawaySingle {
-      //   overflow: auto;
-      //   text-align: center;
-      //   width: 100%;
-      // }
+      #updateGetaway {
+        width: 25%;
+        margin: 30px auto 0px auto;
+        text-align: center;
 
-      // #updateGetaway {
-      //   width: 50%;
-      // }
+        input, textarea {
+          margin-top: 5px;
+          text-align: center;
+        }
+
+        select {
+          width: 100%;
+          font-size: 1.1em;
+          margin-bottom: 10px;
+          text-indent: 115px;
+        }
+
+        #update_duration {
+          padding-left: 20px;
+        }
+
+        #update_travelDate {
+          padding-left: 55px;
+        }
+
+        .returnHome {
+          float: right;
+          padding: 5px 10px 5px 10px;
+          background-color: HSLA(215, 55%, 54%, 1);
+          color: white;
+          font-weight: bold;
+          border-radius: 3px;
+
+          &:hover {
+            background-color: HSLA(215, 55%, 40%, 1);
+          }
+        }
+
+        .updateBtn {
+          float: left;
+        }
+
+      }
 
       li {
         @include span-columns(3);
