@@ -26,9 +26,15 @@
       // Get our Element On Our Page
       $('#getawayList').html(this.$el);
 
+      $('#getawayList li').hover(function() {
+        console.log('hovered');
+        $('.popUp').css('display', 'inline');
+      });
+
     },
 
     render: function () {
+
       var self = this;
 
       // Empty out

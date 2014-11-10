@@ -166,6 +166,17 @@ body {
         font-size: 1.2em;
         color: HSLA(223, 76%, 15%, 1);
         cursor: pointer;
+        position: relative;
+
+        .popUp {
+          display: none;
+          height: 100px;
+          width: 100px;
+          background-color: black;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
 
         &:hover {
           border: 3px solid HSLA(223, 76%, 15%, 1);

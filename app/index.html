@@ -61,6 +61,7 @@
 
     <script type="text/template" id="listTemp">
       <li id="<%= objectId %>">
+        <div class="popUp"><a href="#">click to edit</a></div>
         <p><%= destination %></p>
         <p>Travel Date: <%= moment(travelDate).format("MMM Do YY") %></p>
         <p>Duration: <%= duration %> days</p>
@@ -98,6 +99,7 @@
             <div>
             <span>Rating: (low to high)</span>
               <select>
+                <option name="rating" value="" <% if (rating == "") { %>selected="selected"<% } %><span></span></option>
                 <option name="rating" value="1" <% if (rating == "1") { %>selected="selected"<% } %><span>1</span></option>
                 <option name="rating" value="2" <% if (rating == "2") { %>selected="selected"<% } %><span>2</span></option>
                 <option name="rating" value="3" <% if (rating == "3") { %>selected="selected"<% } %><span>3</span></option>
