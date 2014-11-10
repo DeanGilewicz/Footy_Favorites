@@ -6,8 +6,8 @@
       // route the inital URL
       Backbone.history.start();
 
-      // 'route' is event, this.showBtn - callback, this - context
-      this.on('route', this.showBtn, this);
+      // 'route' is event, this.displayEl - callback, this - context
+      this.on('route', this.displayEl, this);
 
     },
 
@@ -34,7 +34,7 @@
       new App.Views.AddGetaway();
     },
 
-    showBtn: function(route) {
+    displayEl: function(route) {
       if(route === 'home') {
         $('.addNewBtn').removeClass("hide");
         $('.sorts').removeClass("hide");
