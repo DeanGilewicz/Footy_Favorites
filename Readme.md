@@ -1,6 +1,6 @@
 ## Footy Favorites
 
-A small app that allows users to log their upcoming trips or previus trips.
+A small app that allows users to post their upcoming, or previous trips.
 
 How to use it
 * Clone my repo
