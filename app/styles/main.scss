@@ -45,6 +45,10 @@ body {
       margin: 50px auto;
     }
 
+    .hide {
+      display: none;
+    }
+
     #getawayList {
       @include outer-container;
 
@@ -82,20 +86,42 @@ body {
       }
 
       #updateGetaway {
-        width: 25%;
+        width: 60%;
         margin: 30px auto 0px auto;
         text-align: center;
 
-        input, textarea {
+        .main {
+          float: left;
+          width: 45%;
+          margin-right: 10%;
+        }
+
+        .extra {
+          float: left;
+          width: 45%;
+        }
+
+        input {
+          margin-top: 5px;
+          text-align: center;
+          height: 35px;
+        }
+
+        textarea {
+          height: 119px;
+          margin-bottom: 1px;
           margin-top: 5px;
           text-align: center;
         }
 
         select {
           width: 100%;
+          border: none;
+          height: 34px;
           font-size: 1.1em;
+          margin-top: 6px;
           margin-bottom: 10px;
-          text-indent: 115px;
+          text-indent: 125px;
         }
 
         #update_duration {
@@ -106,9 +132,17 @@ body {
           padding-left: 55px;
         }
 
+        .updateBtn {
+          float: left;
+        }
+
+        .delete {
+          margin-right: 10px;
+        }
+
         .returnHome {
           float: right;
-          padding: 5px 10px 5px 10px;
+          padding: 4px 16px 4px 16px;
           background-color: HSLA(215, 55%, 54%, 1);
           color: white;
           font-weight: bold;
@@ -117,10 +151,6 @@ body {
           &:hover {
             background-color: HSLA(215, 55%, 40%, 1);
           }
-        }
-
-        .updateBtn {
-          float: left;
         }
 
       }
@@ -164,8 +194,4 @@ body {
     height: 50px;
     background-color: HSLA(224, 74%, 15%, 1);
   }
-}
-
-.hide {
-  display: none;
 }

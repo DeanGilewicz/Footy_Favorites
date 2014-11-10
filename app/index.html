@@ -24,9 +24,7 @@
   </head>
   <body>
 
-    <div class="header">
-
-    </div>
+    <div class="header"></div>
 
     <div class="hero-unit">
       <h1>Getaways</h1>
@@ -41,18 +39,15 @@
           <option value="#/sort/rating">Rating (low to high)</option>
           <option value="#/sort/rating/reverse">Rating (high to low)</option>
           <option value="#/sort/destination">Destination (a to z)</option>
-          <!-- <a href="#/sort/destination/reverse">Destination (z to a)</a> -->
         </select>
       </div>
       <div id="getawayList"></div>
     </div>
 
-    <div class="footer">
-
-    </div>
+    <div class="footer"></div>
 
     <script type="text/template" id="addTemp">
-      <p class="addTitle">Simply enter the details below to your next getaway...</p>
+      <p class="addTitle">Add the details below for your next getaway...</p>
       <form id="addGetaway">
         <input type="text" id="name" placeholder="Traveler Name" required />
         <input type="text" id="getaway_destination" placeholder="Destination" required />
@@ -75,15 +70,11 @@
           <% } else { %>
             <div><p>click to add rating</p></div>
           <% } %>
-        </a>
-        <a href="#/edit/<%= _id %>">
           <% if(comments !== '') { %>
             <div><p>Comments: <%= comments %></p></div>
           <% } else { %>
             <div><p>click to add comments</p></div>
           <% } %>
-        </a>
-        <a href="#/edit/<%= _id %>">
           <% if(img !== '') { %>
             <div><p><img src="<%= img %>" width="100%"></p></div>
           <% } else { %>
@@ -96,26 +87,30 @@
     <script type="text/template" id="singleTemp">
       <form id="updateGetaway">
         <div id="<%= _id %>">
-          <span>Traveler Name: </span><input type="text" value="<%= name %>" id="update_name" />
-          <span>Destination: </span><input type="text" value="<%= destination %>" id="update_destination" />
-          <span>Duration (days): </span><input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
-          <span>Travel Date: </span><input type="date" value="<%= travelDate %>" id="update_travelDate" />
-          <div>
-          <span>Rating: (low to high)</span>
-            <select>
-              <option name="rating" value="1" <% if (rating == "1") { %>selected="selected"<% } %><span>1</span></option>
-              <option name="rating" value="2" <% if (rating == "2") { %>selected="selected"<% } %><span>2</span></option>
-              <option name="rating" value="3" <% if (rating == "3") { %>selected="selected"<% } %><span>3</span></option>
-              <option name="rating" value="4" <% if (rating == "4") { %>selected="selected"<% } %><span>4</span></option>
-              <option name="rating" value="5" <% if (rating == "5") { %>selected="selected"<% } %><span>5</span></option>
-            </select>
+          <div class="main">
+            <span>Traveler Name: </span><input type="text" value="<%= name %>" id="update_name" />
+            <span>Destination: </span><input type="text" value="<%= destination %>" id="update_destination" />
+            <span>Duration (days): </span><input type="number" min="1" max="100" value="<%= duration %>" id="update_duration" />
+            <span>Travel Date: </span><input type="date" value="<%= travelDate %>" id="update_travelDate" />
           </div>
-          <span>Comments: </span><textarea id="update_comments" placeholder="enter a comment..."><%= comments %></textarea>
-          <span>Photo (url): </span><input type="text" value="<%= img %>" id="update_img" />
+          <div class="extra">
+            <div>
+            <span>Rating: (low to high)</span>
+              <select>
+                <option name="rating" value="1" <% if (rating == "1") { %>selected="selected"<% } %><span>1</span></option>
+                <option name="rating" value="2" <% if (rating == "2") { %>selected="selected"<% } %><span>2</span></option>
+                <option name="rating" value="3" <% if (rating == "3") { %>selected="selected"<% } %><span>3</span></option>
+                <option name="rating" value="4" <% if (rating == "4") { %>selected="selected"<% } %><span>4</span></option>
+                <option name="rating" value="5" <% if (rating == "5") { %>selected="selected"<% } %><span>5</span></option>
+              </select>
+            </div>
+            <span>Comments: </span><textarea id="update_comments" placeholder="enter a comment..."><%= comments %></textarea>
+            <span>Photo (url): </span><input type="text" value="<%= img %>" id="update_img" />
+          </div>
+          <button class="updateBtn">Update</button>
+          <button id="delete">Delete</button>
+          <a href="#/"<button class="returnHome">Cancel</button></a>
         </div>
-        <button class="updateBtn">Update</button>
-        <button id="delete">Delete</button>
-        <a href="#/"<button class="returnHome">Cancel</button></a>
       </form>
     </script>
 
