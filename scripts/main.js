@@ -28,8 +28,11 @@
   // Collection
   App.Collections.Getaways = Backbone.Collection.extend({
     model: App.Models.Getaway,
-    comparator: function (model, modelR) {
-      return -model.get('destination').localeCompare(modelR.get('destination'));
+    comparator: function (model) {
+      var timestamp = new Date(model.get('travelDate')).getTime();
+      return timestamp;
+
+      // return -model.get('destination').localeCompare(modelR.get('destination'));
     },
 
     url: 'http://tiy-atl-fe-server.herokuapp.com/collections/getaway1'
@@ -125,13 +128,17 @@
     // Sorting On The Fly
     if (this.options.sort != undefined) {
 
-      console.log(this.options.reverse);
       // Setting up a localized collection to sort by our sort param
       var local_collection = this.collection.sortBy( function (model) {
-        if (self.options.reverse == true) {
-          return -model.get(self.options.sort);
+        if(self.options.sort == 'travelDate') {
+          mval = new Date(model.get(self.options.sort)).getTime();
         } else {
-          return model.get(self.options.sort);
+          mval = model.get(self.options.sort);
+        }
+        if(self.options.reverse == true) {
+          return -mval;
+        } else {
+          return mval;
         }
       });
         _.each(local_collection, function (g) {
@@ -233,8 +240,8 @@
       // route the inital URL
       Backbone.history.start();
 
-      // 'route' is event, this.showBtn - callback, this - context
-      this.on('route', this.showBtn, this);
+      // 'route' is event, this.displayEl - callback, this - context
+      this.on('route', this.displayEl, this);
 
     },
 
@@ -261,11 +268,13 @@
       new App.Views.AddGetaway();
     },
 
-    showBtn: function(route) {
+    displayEl: function(route) {
       if(route === 'home') {
         $('.addNewBtn').removeClass("hide");
+        $('.sorts').removeClass("hide");
       } else {
         $('.addNewBtn').addClass("hide");
+        $('.sorts').addClass("hide");
       }
     }
 
@@ -285,5 +294,8 @@
 
   });
 
+  $("#sorting").change(function() {
+    document.location.href = $(this).val();
+  });
 
 }());
