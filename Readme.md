@@ -1,6 +1,6 @@
 ## Footy Favorites
 
-A small app that allows users to log different trips that they have been on.
+A small app that allows users to log their upcoming trips or previus trips.
 
 How to use it
 * Clone my repo
@@ -13,6 +13,7 @@ Libraries
 * Underscore
 * Backbone
 * SASS
+* Moment
 
 Authors
 
