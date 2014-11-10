@@ -1,10 +1,10 @@
 (function () {
 
-  App.Routers.AppRouter = Backbone.Router.extend({
+  App.Routers.AppRouter = Parse.Router.extend({
 
     initialize: function () {
       // route the inital URL
-      Backbone.history.start();
+      Parse.history.start();
 
       // 'route' is event, this.displayEl - callback, this - context
       this.on('route', this.displayEl, this);

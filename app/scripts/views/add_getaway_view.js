@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.AddGetaway = Backbone.View.extend({
+  App.Views.AddGetaway = Parse.View.extend({
 
     events: {
       'submit #addGetaway' : 'addGetaway' // submit form : run this 'addGetaway'
@@ -33,8 +33,9 @@
       });
 
       // save model instance to getaways collection (created in main js)
-      App.getaways.add(g).save(null, {
+      g.save(null, {
         success: function () {
+          App.getaways.add(g);
           App.router.navigate('', { trigger: true });
         }
       });

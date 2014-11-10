@@ -1,3 +1,5 @@
+Parse.initialize("YXzkIaVJzLJW5RjZ9YjYl5BPgBPt1BcGyMV6YwlM", "uTsPzUN92IKZsAjm3CstEnQLb8eghMMjxFM0EMWU");
+
 (function () {
 
   // Create Instance of Collection

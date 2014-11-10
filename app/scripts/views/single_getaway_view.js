@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.SingleGetaway = Backbone.View.extend({
+  App.Views.SingleGetaway = Parse.View.extend({
     // assigning el to be a ul with a classname
     tagName: 'ul',
     className: 'getawaySingle',

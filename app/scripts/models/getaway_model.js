@@ -1,8 +1,10 @@
 (function () {
 
-  App.Models.Getaway = Backbone.Model.extend({
+  App.Models.Getaway = Parse.Object.extend({
 
-    idAttribute: '_id',
+    className: 'getaway',
+
+    idAttribute: 'objectId',
 
     defaults: {
       name: '',
