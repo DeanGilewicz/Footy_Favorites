@@ -1,4 +1,4 @@
-## Footy Favorites
+## Getaways
 
 A small app that allows users to post their upcoming, or previous trips.
 
