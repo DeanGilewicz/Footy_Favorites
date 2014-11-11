@@ -61,7 +61,6 @@
 
     <script type="text/template" id="listTemp">
       <li id="<%= objectId %>">
-        <div class="popUp"><a href="#">click to edit</a></div>
         <p><%= destination %></p>
         <p>Travel Date: <%= moment(travelDate).format("MMM Do YY") %></p>
         <p>Duration: <%= duration %> days</p>
@@ -84,6 +83,10 @@
           <% } %>
         </a>
       </li>
+    </script>
+
+    <script type="text/template" id="reviewTemp">
+      <li><%= reviewText %></li>
     </script>
 
     <script type="text/template" id="singleTemp">
@@ -115,6 +118,12 @@
           <a href="#/"<button class="returnHome">Cancel</button></a>
         </div>
       </form>
+
+      <form id="addReview">
+        <textarea id="reviewText" placeholder="Add a Review..."></textarea>
+        <button>Add Review</button>
+      </form>
+
     </script>
 
 
@@ -122,11 +131,11 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
-    <script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
     <script src="../bower_components/moment/moment.js"></script>
-
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
 
     <script type="text/javascript">
         window.App = {};
@@ -138,6 +147,7 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/models/getaway_model.js"></script>
+    <script src="scripts/models/review_model.js"></script>
     <script src="scripts/collections/getaway_collection.js"></script>
     <script src="scripts/views/add_getaway_view.js"></script>
     <script src="scripts/views/list_getaway_view.js"></script>

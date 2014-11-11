@@ -168,15 +168,14 @@ body {
         cursor: pointer;
         position: relative;
 
-        .popUp {
-          display: none;
-          height: 100px;
-          width: 100px;
-          background-color: black;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
+        // .popUp {
+        //   height: 100px;
+        //   width: 100px;
+        //   background-color: black;
+        //   position: absolute;
+        //   top: 0px;
+        //   left: 0px;
+        // }
 
         &:hover {
           border: 3px solid HSLA(223, 76%, 15%, 1);

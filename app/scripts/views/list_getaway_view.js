@@ -26,10 +26,14 @@
       // Get our Element On Our Page
       $('#getawayList').html(this.$el);
 
-      $('#getawayList li').hover(function() {
-        console.log('hovered');
-        $('.popUp').css('display', 'inline');
-      });
+      // $('#getawayList li').hover(
+      //   function() {
+      //     console.log('hovered');
+      //     $(this).addClass('popUp');
+      //   },
+      //   function() {
+      //     $(this).removeClass('popUp');
+      //   });
 
     },
 
