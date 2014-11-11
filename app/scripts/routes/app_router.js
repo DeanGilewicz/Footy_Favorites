@@ -17,7 +17,8 @@
       // allows function to be ran so url can track unique id of getaways #/edit/id
       'edit/:id' : 'editGetaway',
       'add' : 'addGetaway',
-      'sort/:sortby(/:reverse)' : 'home'
+      'sort/:sortby(/:reverse)' : 'home',
+      'review/:id' : 'reviewGetaway'
     },
 
     home: function (sortby, reverse) {
@@ -42,6 +43,10 @@
         $('.addNewBtn').addClass("hide");
         $('.sorts').addClass("hide");
       }
+    },
+
+    reviewGetaway: function () {
+      new App.Views.ReviewGetaway();
     }
 
   });

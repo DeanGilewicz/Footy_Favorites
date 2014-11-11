@@ -10,9 +10,8 @@
       'submit #updateGetaway' : 'updateGetaway',
 
       // when delete id clicked (button) will run function
-      'click #delete' : 'deleteGetaway',
+      'click #delete' : 'deleteGetaway'
 
-      'submit #addReview' : 'addReview'
     },
 
     // dump html from singleTemp script into template
@@ -32,39 +31,6 @@
 
       // add contents to el
       this.$el.html(this.template(this.options.getaway.toJSON()));
-
-      var reviewTemplate = _.template($('#reviewTemp').html());
-      var reviews_query = new Parse.Query(App.Models.Review);
-      reviews_query.equalTo('parent', this.options.getaway);
-
-      this.$el.append('<h2>Reviews</h2><ul class="reviews"></ul>');
-
-      reviews_query.find({
-        success: function (results) {
-
-          _.each(results, function(review) {
-            $('ul.reviews').append(reviewTemplate(review.toJSON()));
-          })
-
-          }
-        })
-
-      },
-
-      addReview: function (e) {
-        e.preventDefault();
-
-        var review = new App.Models.Review({
-
-          reviewText: $('#reviewText').val(),
-          parent: this.options.getaway
-      });
-
-      review.save(null, {
-        success: function () {
-          App.router.navigate('', {trigger: true});
-        }
-      });
 
     },
     // function that runs when submit form

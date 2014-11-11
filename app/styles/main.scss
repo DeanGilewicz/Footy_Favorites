@@ -124,6 +124,7 @@ body {
           text-indent: 125px;
         }
 
+
         #update_duration {
           padding-left: 20px;
         }
@@ -153,6 +154,16 @@ body {
           }
         }
 
+      }
+
+      #addReview {
+        width: 60%;
+        margin: 20px auto;
+        text-align: center;
+
+        textarea {
+        text-align: center;
+        }
       }
 
       li {
