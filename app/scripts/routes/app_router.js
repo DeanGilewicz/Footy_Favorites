@@ -7,7 +7,8 @@
       Parse.history.start();
 
       // 'route' is event, this.displayEl - callback, this - context
-      this.on('route', this.displayEl, this);
+      // This is not supported in backbone version that parse uses
+      // this.on('route', this.displayEl, this);
 
     },
 
@@ -24,29 +25,35 @@
     home: function (sortby, reverse) {
       var sort_check = (reverse == undefined) ? false : true;
       new App.Views.ListGetaway({ collection: App.getaways, sort: sortby, reverse: sort_check });
+
+      $('.addNewBtn').removeClass("hide");
+      $('.sorts').removeClass("hide");
+
     },
 
     editGetaway: function (trip) {
       var g = App.getaways.get(trip);
       new App.Views.SingleGetaway({ getaway: g });
+
+      $('.addNewBtn').addClass("hide");
+      $('.sorts').addClass("hide");
+
     },
 
     addGetaway: function () {
       new App.Views.AddGetaway();
-    },
 
-    displayEl: function(route) {
-      if(route === 'home') {
-        $('.addNewBtn').removeClass("hide");
-        $('.sorts').removeClass("hide");
-      } else {
-        $('.addNewBtn').addClass("hide");
-        $('.sorts').addClass("hide");
-      }
+      $('.addNewBtn').addClass("hide");
+      $('.sorts').addClass("hide");
+
     },
 
     reviewGetaway: function () {
       new App.Views.ReviewGetaway();
+
+      $('.addNewBtn').addClass("hide");
+      $('.sorts').addClass("hide");
+
     }
 
   });
